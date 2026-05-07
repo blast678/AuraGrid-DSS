@@ -1,0 +1,56 @@
+# --- Environment & Secrets (CRITICAL) ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+ai-engine/data/
+# --- Next.js / Node ---
+node_modules/
+.next/
+out/
+build/
+.vercel
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Go (Backend) ---
+# Binaries and packaging
+bin/
+core-api/core-api
+core-api/cmd/main
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+# Dependency directories (only if you use vendor)
+vendor/
+
+# --- Python (AI Engine) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv
+venv/
+ENV/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Data & Logs (Preventing Repo Bloat) ---
+# We ignore the massive processed files but keep the raw seeds
+ai-engine/data/processed_*.csv
+ai-engine/data/final_*.csv
+ai-engine/data/vahan_ev_adoption_proxy.csv
+*.log
+docker/volumes/
+
+# --- IDE & OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
