@@ -1,70 +1,92 @@
 package main
 
 import (
-	"auragrid/core-api/internal/api"
-	"auragrid/core-api/internal/db"
-	"fmt"
+	"context"
+	"crypto/tls"
+	"database/sql"
+	"encoding/json"
 	"log"
 	"net/http"
-	"crypto/tls"
-	"log"
 	"os"
 
+	_ "github.com/lib/pq"
 	"github.com/segmentio/kafka-go"
 	"github.com/segmentio/kafka-go/sasl/scram"
-	"github.com/rs/cors"
 )
 
-func main() {
-	fmt.Println("⚡ AuraGrid Main Server Initializing...")
-	// 1. Pull the Aiven credentials from Render environment variables
-	brokerAddress := os.Getenv("KAFKA_BROKER") // e.g., kafka-xyz.aivencloud.com:26720
-	username := os.Getenv("KAFKA_USER")
-	password := os.Getenv("KAFKA_PASS")
+type GridEvent struct {
+	ZoneID  string  `json:"zone_id"`
+	LoadKWh float64 `json:"load_kwh"`
+}
 
-	// 2. Configure SCRAM authentication (Aiven standard)
-	mechanism, err := scram.Mechanism(scram.SHA256, username, password)
-	if err != nil {
-		log.Fatalf("Failed to configure SCRAM: %v", err)
+func main() {
+	log.Println("🚀 Booting AuraGrid Core API...")
+
+	// 1. Load Environment Variables
+	kafkaURL := os.Getenv("KAFKA_BROKER")
+	kafkaUser := os.Getenv("KAFKA_USER")
+	kafkaPass := os.Getenv("KAFKA_PASS")
+	dbURL := os.Getenv("DB_URL")
+	port := os.Getenv("PORT") // Render dynamic port
+	if port == "" {
+		port = "8080" // Fallback for localhost
 	}
 
-	// 3. Configure the secure TLS Dialer
+	// 2. Start Kafka Sink Worker in the background
+	if kafkaURL != "" && dbURL != "" {
+		go startKafkaSink(kafkaURL, kafkaUser, kafkaPass, dbURL)
+	} else {
+		log.Println("⚠️ KAFKA_BROKER or DB_URL missing. Skipping Kafka Sink.")
+	}
+
+	// 3. Setup HTTP Server for Next.js
+	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		json.NewEncoder(w).Encode(map[string]string{"status": "Core API Live (Muscle)", "mode": "Water-Filling Armed"})
+	})
+
+	log.Printf("⚡ Core API listening on port %s...\n", port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
+}
+
+// startKafkaSink connects to Aiven Kafka and dumps to Aiven Postgres
+func startKafkaSink(kafkaURL, user, pass, dbURL string) {
+	// Connect Postgres
+	db, err := sql.Open("postgres", dbURL)
+	if err != nil {
+		log.Printf("❌ DB Connection Error: %v", err)
+		return
+	}
+	db.Exec(`CREATE TABLE IF NOT EXISTS grid_telemetry (time TIMESTAMPTZ DEFAULT NOW(), zone_id TEXT, load_kwh FLOAT)`)
+
+	// Connect Aiven Kafka (Secure TLS)
+	mechanism, _ := scram.Mechanism(scram.SHA256, user, pass)
 	dialer := &kafka.Dialer{
 		SASLMechanism: mechanism,
-		TLS:           &tls.Config{}, // Aiven requires TLS
+		TLS:           &tls.Config{},
 	}
-
-	// 4. Initialize the Kafka Reader
 	reader := kafka.NewReader(kafka.ReaderConfig{
-		Brokers: []string{brokerAddress},
+		Brokers: []string{kafkaURL},
 		Topic:   "grid-load-events",
-		GroupID: "auragrid-consumer-group",
+		GroupID: "auragrid-sink",
 		Dialer:  dialer,
 	})
 
-	log.Println("✅ Successfully connected to Aiven Kafka!")
-	// 1. Boot up Database Connection
-	db.InitDB()
-	defer db.CloseDB()
+	log.Println("✅ Aiven Kafka Sink Connected! Waiting for events...")
 
-	// 2. Set up the Router
-	mux := http.NewServeMux()
-
-	// Mount the 4 Frontend Endpoints
-	mux.HandleFunc("/api/forecast", api.GetForecastHandler)
-	mux.HandleFunc("/api/recommendations", api.GetRecommendationsHandler)
-	mux.HandleFunc("/api/directives", api.GetDirectivesHandler)
-	mux.HandleFunc("/api/logs", api.GetLogsHandler)
-
-	// 3. Configure CORS (Critical for Next.js on Port 3000)
-	handler := cors.New(cors.Options{
-		AllowedOrigins:   []string{"http://localhost:3000"},
-		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
-		AllowedHeaders:   []string{"Content-Type", "Authorization"},
-		AllowCredentials: true,
-	}).Handler(mux)
-
-	// 4. Start Server
-	fmt.Println("✅ ALL SYSTEMS GO: API Service live on http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", handler))
+	for {
+		m, err := reader.ReadMessage(context.Background())
+		if err != nil {
+			continue
+		}
+		var event GridEvent
+		json.Unmarshal(m.Value, &event)
+		
+		// Dump to Data Lake
+		_, err = db.Exec("INSERT INTO grid_telemetry (zone_id, load_kwh) VALUES ($1, $2)", event.ZoneID, event.LoadKWh)
+		if err == nil {
+			log.Printf("💾 Sunk event to Data Lake: %s -> %.2f kWh", event.ZoneID, event.LoadKWh)
+		}
+	}
 }
