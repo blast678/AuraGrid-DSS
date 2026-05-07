@@ -1,73 +1,69 @@
 version: '3.8'
 
 services:
-  # 1. THE DATABASE (TimescaleDB / Postgres)
-  db:
-    image: postgis/postgis:15-3.4-alpine
-    container_name: bescom-db
+  # Persistence Layer: TimescaleDB for time-series grid data 
+  timescaledb:
+    image: timescale/timescaledb:latest-pg15
+    container_name: auragrid-db
     environment:
-      POSTGRES_USER: bescom_user
-      POSTGRES_PASSWORD: bescom_password
-      POSTGRES_DB: bescom_grid
+      - POSTGRES_USER=bescom_admin
+      - POSTGRES_PASSWORD=grid_secure_pass
+      - POSTGRES_DB=auragrid
     ports:
-      - "5433:5432"
+      - "5433:5432" # Host 5433 mapped to container 5432
     volumes:
-      - db_data:/var/lib/postgresql/data
-    restart: unless-stopped
+      - ./data/postgres:/var/lib/postgresql/data
 
-  # 2. ZOOKEEPER (Manages Kafka)
+  # Nervous System: Kafka for high-concurrency event streaming [cite: 110, 111, 136]
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.3.0
-    container_name: bescom-zookeeper
+    image: bitnami/zookeeper:latest
     environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
-    ports:
-      - "2181:2181"
+      - ALLOW_ANONYMOUS_LOGIN=yes
 
-  # 3. APACHE KAFKA (The Event Bus)
   kafka:
-    image: confluentinc/cp-kafka:7.3.0
-    container_name: bescom-kafka
-    depends_on:
-      - zookeeper
+    image: bitnami/kafka:latest
+    container_name: auragrid-kafka
     ports:
       - "9092:9092"
     environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://kafka:29092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT_INTERNAL
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_ANONYMOUS_LOGIN=yes
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+    depends_on:
+      - zookeeper
 
-  # 4. KAFKA UI (Visual Dashboard)
-  kafka-ui:
-    image: provectuslabs/kafka-ui:latest
-    container_name: bescom-kafka-ui
+  # Brain Layer: Python FastAPI serving Prophet ML forecasts [cite: 106, 129, 130]
+  ai-engine:
+    build: ./ai-engine
+    container_name: auragrid-ai
     ports:
-      - "9000:8080"
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgres://bescom_admin:grid_secure_pass@timescaledb:5432/auragrid
+    depends_on:
+      - timescaledb
+
+  # Core Layer: GoLang API for Water-Filling & Synergy math [cite: 103, 104, 124]
+  core-api:
+    build: ./core-api
+    container_name: auragrid-core
+    ports:
+      - "8080:8080"
+    environment:
+      - KAFKA_BROKERS=kafka:9092
+      - DB_URL=postgres://bescom_admin:grid_secure_pass@timescaledb:5432/auragrid
     depends_on:
       - kafka
+      - timescaledb
+
+  # Client Layer: Next.js Frontend [cite: 93, 101, 116]
+  frontend:
+    build: ./frontend
+    container_name: auragrid-ui
+    ports:
+      - "3000:3000"
     environment:
-      KAFKA_CLUSTERS_0_NAME: bescom-local
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
-      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
-
-  # 5. AURAGRID AI-ENGINE (Your Python Microservice)
-  # ai-engine:
-  #   build: 
-  #     context: ./ai-engine
-  #     dockerfile: Dockerfile
-  #   container_name: aura-ai
-  #   ports:
-  #     - "8000:8000"
-  #   # We map the models folder so you can swap the JSON model without rebuilding the container
-  #   volumes:
-  #     - ./ai-engine/models:/app/models
-  #   depends_on:
-  #     - kafka
-  #   restart: unless-stopped
-
-volumes:
-  db_data:
+      - NEXT_PUBLIC_API_URL=http://localhost:8080
+    depends_on:
+      - core-api

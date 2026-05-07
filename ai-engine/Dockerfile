@@ -1,25 +1,22 @@
-FROM python:3.12-slim
+# Use Python 3.9-slim to reduce image size
+FROM python:3.9-slim
 
-# 1. Install build tools
+# Install system dependencies required for Prophet (C++ compiler) [cite: 130]
 RUN apt-get update && apt-get install -y \
     build-essential \
+    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# 2. Install Python requirements
+# Install Python requirements
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 3. CRITICAL: Install the actual CmdStan engine inside Linux
-# This is why we need that extra disk space.
-RUN python -m cmdstanpy.install_cmdstan
+# Copy source code
+COPY . .
 
-# 4. Copy code
-COPY models/ /app/models/
-COPY app/ /app/app/
-
-ENV PYTHONPATH=/app
+# Expose FastAPI port [cite: 106]
 EXPOSE 8000
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
