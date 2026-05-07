@@ -1,8 +1,8 @@
 package main
 
 import (
-	"auragrid-dss/core-api/internal/api"
-	"auragrid-dss/core-api/internal/db"
+	"auragrid/core-api/internal/api"
+	"auragrid/core-api/internal/db"
 	"fmt"
 	"log"
 	"net/http"

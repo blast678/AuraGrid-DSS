@@ -1,7 +1,7 @@
 package scheduler
 
 import (
-	"auragrid-dss/core-api/internal/models"
+	"auragrid/core-api/internal/models"
 	"math"
 )
 

@@ -1,4 +1,4 @@
-module auragrid-dss/core-api
+module auragrid/core-api
 
 go 1.25.5
 

@@ -1,0 +1,501 @@
+charger_id,name,lat,lon,city,state,operator,source
+487809,Menu 99,10.337347239575656,77.95757891905723,Unknown,Tamil Nadu,Unknown,OpenChargeMap
+486925,VeChaarge EV Charging Station - Hilly Aqua,9.857073848870963,76.72914896160364,Muttam,Kerala,Unknown,OpenChargeMap
+485927,Guntur - Chirala Road,16.230967820072166,80.50969931337863,Unknown,Andhra Pradesh,Unknown,OpenChargeMap
+485770,Hotel Shri Durga,12.824969442096815,75.17543659776558,Sathikallu,Karnataka,Unknown,OpenChargeMap
+485543,VeChaarge Charging Station,10.158963087020666,76.35822818960128,Athani,Kerala,Unknown,OpenChargeMap
+485466,Srinivasa Residency,12.945135145283535,75.79442761903636,Sakaleshpura,Karnataka,Unknown,OpenChargeMap
+485444,Shakthi Charging Station,12.878980660652477,75.04671422477765,Bantwal,Karnataka,Unknown,OpenChargeMap
+485113,Panchjanya Automobiles,18.482695102792377,73.80274365086417,Pune,Maharashtra,Unknown,OpenChargeMap
+485112,Nanded City,18.45952286506575,73.78559864482418,Pune,Maharashtra,Unknown,OpenChargeMap
+485111,Datsons Electronics Pvt. Ltd,18.423345827831167,73.75486582515008,Pune,Maharashtra,Unknown,OpenChargeMap
+485110,Shell Petrol Pump,18.310542527502665,73.86760940905836,Pune,Maharashtra,Unknown,OpenChargeMap
+485109,Jio-BP Mobility,18.28557562798189,73.87505232753846,Kelawade,Maharashtra,Unknown,OpenChargeMap
+485108,Grand Food Plaza,18.28154497701165,73.87636353467106,Kelwade Bhor,Maharashtra,Unknown,OpenChargeMap
+485107,Hotel Nanjundeshwara,13.285618008016613,77.1827495915004,Pandithanahalli,Karnataka,Unknown,OpenChargeMap
+485099,"VeChaarge EV Charging Station - Chemmanda, Thrissur",10.38445,76.20057,Thrissur,Kerala,Unknown,OpenChargeMap
+484948,Sant Sawatamali,18.127500236686505,73.9838751615155,Unknown,Maharashtra,Unknown,OpenChargeMap
+484947,The Farmer's Kitchen,18.117907588358737,73.9872937763649,Khandala,Maharashtra ,Unknown,OpenChargeMap
+484946,Hotel Aram Regency,18.002654665762318,73.99485811928642,Wele,Maharashtra ,Unknown,OpenChargeMap
+484945,Hotel Ashirwad Inn,17.990830600792236,73.99070513633966,Wele,Maharashtra ,Unknown,OpenChargeMap
+484944,OscarWadi Misal,17.987737858886614,73.98952587881438,Wele,Maharashtra ,Unknown,OpenChargeMap
+484943,Hotel Sai Park Inn,17.97780430476992,73.98814830460636,Surur,Maharashtra ,Unknown,OpenChargeMap
+484942,Hotel Sai Palace,17.916981447964183,73.97485404432253,Anavadi,Maharashtra ,Unknown,OpenChargeMap
+484941,Hotel Ruchi Park,17.89954189035585,73.97251179354416,Badewadi,Maharashtra ,Unknown,OpenChargeMap
+484940,Hotel Tatyancha Wada,17.86785873935572,73.95717787255023,Asale,Maharashtra ,Unknown,OpenChargeMap
+484939,Anewadi Toll Plaza,17.81036487491417,73.97103555789285,Anewadi,Maharashtra,Unknown,OpenChargeMap
+484938,Amrai Resort,17.637720837508112,74.01241295965058,Shendre,Maharashtra ,Unknown,OpenChargeMap
+484937,Hotel Rajmarg,17.606014312013446,74.03155558680098,Satara,Maharashtra ,Unknown,OpenChargeMap
+484936,Hotel Mahendra,17.29809580708513,74.1672421570404,Gote,Maharashtra ,Unknown,OpenChargeMap
+484935,Hotel Sangam,17.27376683937693,74.18033478074976,Malkapur,Maharashtra ,Unknown,OpenChargeMap
+484933,Sai Restaurant and Cafe,17.225688254216273,74.18004450135562,Nandlapur,Maharashtra ,Unknown,OpenChargeMap
+484931,HR Resort,17.20688925788464,74.15671570906908,Kale,Maharashtra ,Unknown,OpenChargeMap
+484930,One Bite Restaurant & Captains Paradise Lodge,17.106772665855054,74.20528463090555,Kedargaon,Maharashtra ,Unknown,OpenChargeMap
+484929,Jio-BP Mobility Station,16.96074917540507,74.27238858371413,Sangli,Maharashtra ,Unknown,OpenChargeMap
+484928,Hotel 7/12 Food Mall,16.86187060364415,74.29702275641802,Kini,Maharashtra ,Unknown,OpenChargeMap
+484927,Nakshatra Hotel,16.821849058337982,74.28634524546301,Peth Vadgoan,Maharashtra ,Unknown,OpenChargeMap
+484926,Jio-BP Mobility Station,16.82115204141675,74.28579030888565,Kolhapur,Maharashtra ,Unknown,OpenChargeMap
+484925,Hotel Vanashree Garden,16.745064120638784,74.32510322388913,Kolhapur,Maharashtra ,Unknown,OpenChargeMap
+484924,Konduskar Kia,16.753657471639805,74.27894909933461,Kolhapur,Maharashtra ,Unknown,OpenChargeMap
+484923,"Unique Hyundai, Shiroli",16.731324639339437,74.28183031502982,Shiroli,Maharashtra ,Unknown,OpenChargeMap
+484922,Highway Tadka,15.439496981650441,74.88361551536256,Mugad,Karnataka ,Unknown,OpenChargeMap
+481512,Reliance Mall,16.698876513466676,74.23114174500584,Kolhapur,Maharashtra ,Unknown,OpenChargeMap
+481511,Kolhapur Railway Station,16.70295634772825,74.23709668798799,Kolhapur,Maharashtra ,Unknown,OpenChargeMap
+481510,MAI Hyundai Kolhapur,16.70238664960913,74.25029800499102,Kolhapur,Maharashtra ,Unknown,OpenChargeMap
+481509,CWC Kolhapur - I,16.702524278100203,74.26649372291912,Kolhapur,Maharashtra ,Unknown,OpenChargeMap
+481508,Hotel Jurkis Thali Junction Kolhapur,16.682801730759486,74.27190754847119,Sarnobatwadi,Maharashtra ,Unknown,OpenChargeMap
+481507,Hotel Purn Kolhapuri,16.62190538834921,74.29599618904076,Kaneriwadi,Maharashtra ,Unknown,OpenChargeMap
+481506,Hotel Udupi Grand,16.395447585615557,74.37336389990233,Nipani,Karnataka ,Unknown,OpenChargeMap
+481505,Regenta Resort Belagavi,15.752744488741397,74.41115324455757,Belagavi,Karnataka ,Unknown,OpenChargeMap
+481504,Bellad Hyundai,15.463065888347815,74.9774624557773,Dharwad,Karnataka ,Unknown,OpenChargeMap
+481503,Big Mishra Pedha Hubli-Dharwad Highway,15.394478733061298,75.00854070119784,Hubballi,Karnataka ,Unknown,OpenChargeMap
+481502,Manickbag Automobiles,15.369551854899184,75.11909436764411,Hubballi,Karnataka ,Unknown,OpenChargeMap
+481501,Hotel Punjab Junction,15.184936484038705,75.13612460192677,Agadi,Karnataka ,Unknown,OpenChargeMap
+481500,Paakashala @ Chitradurga,14.248879279136355,76.42599146668157,Chitradurga,Karnataka ,Unknown,OpenChargeMap
+481499,Sri Kamadenu Veg Restaurant,13.61215890500984,76.95345953343492,Karijevnahalli,Karnataka ,Unknown,OpenChargeMap
+481498,Shell Recharge Sus Road,18.551668484658936,73.76101557363096,Pune,Maharashtra ,Unknown,OpenChargeMap
+481497,B4S Baner,18.5534199309817,73.77066239419024,Pune,Maharashtra ,Unknown,OpenChargeMap
+481496,"Crystal Kia, Baner",18.557345771328887,73.77053982274862,Pune,Maharashtra ,Unknown,OpenChargeMap
+481495,Aditya School,18.56124353052958,73.7812056950576,Pune,Maharashtra ,Unknown,OpenChargeMap
+481494,Amar Business Zone,18.56414082731241,73.77645742740673,Pune,Maharashtra ,Unknown,OpenChargeMap
+481493,Balewadi Charge Park,18.57893575826883,73.76250206523362,Pune,Maharashtra ,Unknown,OpenChargeMap
+481492,Gaurav Icon Tower,18.59629964353062,73.75599935970514,Pune,Maharashtra ,Unknown,OpenChargeMap
+481491,MG Motor B.U. Bhandari Showroom,18.599012307937844,73.75415702984328,Pune,Maharashtra ,Unknown,OpenChargeMap
+481489,Hotel Sayaji Wakad,18.599090985407713,73.75190356008125,Pune,Maharashtra ,Unknown,OpenChargeMap
+481488,Garve Hyundai,18.59991835206595,73.7537161148497,Pune,Maharashtra ,Unknown,OpenChargeMap
+480935,Shell Tathawade,18.61358685499954,73.74883334321919,Pune,Maharashtra ,Unknown,OpenChargeMap
+480934,"Burger King, Tathawade",18.61652961025573,73.74773834178781,Pune,Maharashtra,Unknown,OpenChargeMap
+480933,Tata Motors Tathawade,18.623488205362765,73.74548104644525,Pune,Maharashtra ,Unknown,OpenChargeMap
+480932,Sai Darbar Hotel,18.623896266954958,73.74563734187849,Pune,Maharashtra ,Unknown,OpenChargeMap
+480931,"Life Republic, Hingewadi",18.62469386315059,73.71614384492979,Pune,Maharashtra ,Unknown,OpenChargeMap
+480930,E Fill Electric Charging Station,18.65176177650684,73.73354791594272,Pimpri-Chinchwad,Maharashtra ,Unknown,OpenChargeMap
+480439,O by Tamara Trivandrum,8.512700130028037,76.90155717443145,Unknown,Kerala,Unknown,OpenChargeMap
+480438,Mall Of Travancore,8.487399350739054,76.9263865896603,Unknown,Kerala,Unknown,OpenChargeMap
+480437,Al Ameen EVCS,11.083012168233694,76.06846692942781,Malappuram,Kerala,Unknown,OpenChargeMap
+480436,Caritas Hospital,9.643106438770388,76.54978698459388,Thellakom,Kerala,Unknown,OpenChargeMap
+480435,Sihla Energy EVCS,9.265237172773737,76.77803509536034,Pathanamthitta,Kerala,Unknown,OpenChargeMap
+480434,Vandanam Vibe EVCS,9.412054896881273,76.3497681949093,Alappuzha,Kerala,Unknown,OpenChargeMap
+480433,Thanneermukkom Soorya EVCS,9.651227575066756,76.37388825507924,Thanneermukkom,Kerala,Unknown,OpenChargeMap
+480432,Chavassery Power Boost EVCS,11.948082439185967,75.61538494401248,Chavassery,Kerala,Unknown,OpenChargeMap
+480431,Kakkanad Thomas Tower EVCS,10.003099231097394,76.36193325463523,Kakkanad,Kerala,Unknown,OpenChargeMap
+480430,Vyttila I-Drive EVCS,9.976617428146184,76.3178961221787,Vyttila,Kerala,Unknown,OpenChargeMap
+480429,Centre Square Mall EVCS,9.977956768136323,76.28359498430041,Kochi,Kerala,Unknown,OpenChargeMap
+480428,Kadavanthra Hi-Span EVCS,9.966419154275172,76.30020200358149,Elamkulam,Kerala,Unknown,OpenChargeMap
+480427,Thiruvankulam Thuruthiyil ECVS,9.944941654521244,76.3749542207513,Thiruvankulam,Kerala,Unknown,OpenChargeMap
+480426,Thiruvankulam Edifice EVCS,9.944357341495845,76.37454932652759,Thiruvankulam,Kerala,Unknown,OpenChargeMap
+480425,New Central Talkies EVCS,9.932870963002458,76.35402261324248,Thrippunithura,Kerala,Unknown,OpenChargeMap
+480424,Nucleus Mall EVCS,9.939769327506,76.33084767868081,Thrippunithura,Kerala,Unknown,OpenChargeMap
+480423,Maradu Crowne Plaza EVCS,9.934295516158258,76.31882007213062,Maradu,Kerala,Unknown,OpenChargeMap
+480422,Nettoor Royal Drive Smart EVCS,9.928512582134246,76.31755483825702,Nettoor,Kerala,Unknown,OpenChargeMap
+480421,VPS Lakeshore Hospital EVCS,9.918898936471678,76.31841806447744,Ernakulam ,Kerala,Unknown,OpenChargeMap
+480420,Wayside Inn EVCS,9.649388802099395,76.33665331046609,Cherthala ,Kerala,Unknown,OpenChargeMap
+480419,Kanjikuzhy Silver Sand EVCS,9.609362414766593,76.32996533541757,Kanjikuzhi,Kerala,Unknown,OpenChargeMap
+480418,CGH Coconut Lagoon,9.629063772891357,76.42994325927907,Kumarakom,Kerala,Unknown,OpenChargeMap
+480417,Manipuzha Lazza EVCS,9.568985392581737,76.5196765497044,Kottayam,Kerala,Unknown,OpenChargeMap
+480416,Changanassery Kohinoor EVCS,9.467585942191349,76.529836167442,Changanassery ,Kerala,Unknown,OpenChargeMap
+480415,Changanassery Chaitanya Greem,9.43275347373934,76.54375728229024,Changanassery ,Kerala,Unknown,OpenChargeMap
+480414,TK Road Power Park EVCS,9.38581270425044,76.61916026110157,Thiruvalla ,Kerala,Unknown,OpenChargeMap
+480413,Kaviyoor M Point EVCS,9.3906625417263,76.6072280975178,Thiruvalla,Kerala,Unknown,OpenChargeMap
+480412,SR Commercial Centre EVCS,9.253682399563758,76.58650166246048,Mavelikkara,Kerala,Unknown,OpenChargeMap
+480411,Haripad Saugandhika EVCS,9.266620588627518,76.46132375899651,Haripad,Kerala,Unknown,OpenChargeMap
+480410,Karunagappally Energy Spot,9.059438002693,76.53579910806559,Karunagapally,Kerala,Unknown,OpenChargeMap
+480409,Karunagappally Memories Inn,9.089815631359244,76.5272522393791,Karunagapally,Kerala,Unknown,OpenChargeMap
+480408,Ochira Merit EVCS,9.119213418338845,76.51867061239898,Ochira,Kerala,Unknown,OpenChargeMap
+480407,Power Plus EVCS,9.168893147180441,76.71631290057576,Adoor,Kerala,Unknown,OpenChargeMap
+480406,Pathanapuram Anjana EVCS,9.096268712020645,76.84666890396215,Pathanapuram,Kerala,Unknown,OpenChargeMap
+480405,Kallambalam Power Bay EVCS,8.756819929206785,76.79358309071404,Thiruvananthapuram ,Kerala,Unknown,OpenChargeMap
+480404,Pulimath Maram Chai Cafe EVCS,8.746709854174853,76.89821761212352,Thiruvananthapuram ,Kerala,Unknown,OpenChargeMap
+480403,Nedumangad KFC EVCS,8.604154390902394,76.99784557219118,Nedumangad,Kerala,Unknown,OpenChargeMap
+480402,RashMishi DLF South Court,28.527351121599693,77.22113007205314,NewDelhi,Delhi,Unknown,OpenChargeMap
+479727,Nikol EV Charging station ,18.717181904569728,74.18292088190788,Pune,,Unknown,OpenChargeMap
+479445,Blaze Fast Charger For 2 Ev Wheeler ,17.340475789422385,78.54539549782817,Lb Nagar ,Telangana ,Unknown,OpenChargeMap
+479438,Tata Power Charging Station,22.2869608,86.7909833,Unknown,Odisha,Unknown,OpenChargeMap
+479437,Hindustan Petroleum Corporation Limited Charging Station,22.4497441,86.59494370000002,Unknown,Odisha,Unknown,OpenChargeMap
+479436,Hindustan Petroleum Corporation Limited,22.4498584,86.5950411,Unknown,Odisha,Unknown,OpenChargeMap
+479435,Jio-bp,22.140249999999998,85.71265,Unknown,Odisha,Unknown,OpenChargeMap
+479434,Jio-bp,22.0015401,85.3279801,Unknown,Odisha,Unknown,OpenChargeMap
+479433,Ather Grid Charging Station,22.243665999999997,84.827354,Unknown,Odisha,Unknown,OpenChargeMap
+479432,Ather Grid Charging Station,22.23666,84.77015,Unknown,Odisha,Unknown,OpenChargeMap
+479431,Ather Grid Charging Station,22.226704599999998,84.8641165,Unknown,Odisha,Unknown,OpenChargeMap
+479430,Tata Power Charging Station,22.2268099,84.79603639999999,Unknown,Odisha,Unknown,OpenChargeMap
+479429,Ather Charging Station,22.2278125,84.81838739999999,Unknown,Odisha,Unknown,OpenChargeMap
+479428,Ather charging station,22.1040381,84.0375432,Unknown,Odisha,Unknown,OpenChargeMap
+479427,Jio-bp,22.1100379,83.99531890000002,Unknown,Odisha,Unknown,OpenChargeMap
+479426,Ather Grid Charging Station,22.105083,84.03789499999999,Unknown,Odisha,Unknown,OpenChargeMap
+479425,Tata Power Charging Station,21.762953,87.010724,Unknown,Odisha,Unknown,OpenChargeMap
+479424,Ather Grid Charging Station,21.940046,86.74460599999999,Unknown,Odisha,Unknown,OpenChargeMap
+479423,WARIVO ELECTRIC SCOOTER SHOWROOM -PREMJIT MOTORS BARIPADA,21.9265285,86.7319555,Unknown,Odisha,Unknown,OpenChargeMap
+479422,Ather Grid Charging Station,21.909101,86.751335,Unknown,Odisha,Unknown,OpenChargeMap
+479421,Electric Vehicle Charging Station,21.8057616,85.9951672,Unknown,Odisha,Unknown,OpenChargeMap
+479420,Ather Grid Charging Station,21.852719999999998,83.99909,Unknown,Odisha,Unknown,OpenChargeMap
+479419,Tata Power Charging Station,21.86703,83.966208,Unknown,Odisha,Unknown,OpenChargeMap
+479418,Ather Grid Charging Station,21.917408,83.38266,Unknown,Odisha,Unknown,OpenChargeMap
+479417,Tata Power Charging Station,21.920673999999998,83.37071399999999,Unknown,Odisha,Unknown,OpenChargeMap
+479416,BPCL Charging Station,21.872868999999998,83.38834899999999,Unknown,Odisha,Unknown,OpenChargeMap
+479415,Ankush Vehicles,21.8485001,82.7791088,Unknown,Odisha,Unknown,OpenChargeMap
+479414,CharjKaro Charging Station,21.8069144,82.75252929999999,Unknown,Odisha,Unknown,OpenChargeMap
+479413,BPCL Charging Station,21.864104299999997,82.4621088,Unknown,Odisha,Unknown,OpenChargeMap
+479412,Electric Vehicle Charging Station,21.8833782,82.1504942,Unknown,Odisha,Unknown,OpenChargeMap
+479411,BPCL Charging Station,21.734158,81.535732,Unknown,Odisha,Unknown,OpenChargeMap
+479410,Jio-bp pulse Charging Station,21.592751,87.02058799999999,Unknown,Odisha,Unknown,OpenChargeMap
+479409,Jio-bp pulse Charging Station,21.5926108,87.0205579,Unknown,Odisha,Unknown,OpenChargeMap
+479408,Electric Vehicle Charging Station,21.593016600000002,87.02072849999999,Unknown,Odisha,Unknown,OpenChargeMap
+479407,Ather Grid Charging Station,21.481623,86.9069,Unknown,Odisha,Unknown,OpenChargeMap
+479406,Ather Charging Station,21.49872,86.93108,Unknown,Odisha,Unknown,OpenChargeMap
+479405,Electric Vehicle Charging Station,21.5746535,87.09849589999999,Unknown,Odisha,Unknown,OpenChargeMap
+479404,Tata Power Charging Station,21.479922,86.904904,Unknown,Odisha,Unknown,OpenChargeMap
+479403,Ather Charging Station,21.5064591,86.911091,Unknown,Odisha,Unknown,OpenChargeMap
+479402,Tata Power Charging Station,21.4978274,86.8896469,Unknown,Odisha,Unknown,OpenChargeMap
+479401,Tata Power Charging Station,21.548809,85.494006,Unknown,Odisha,Unknown,OpenChargeMap
+479400,Ather Grid Charging Station,21.6324613,85.5907884,Unknown,Odisha,Unknown,OpenChargeMap
+479399,Electric Vehicle Charging Station,21.5490869,85.49427089999999,Unknown,Odisha,Unknown,OpenChargeMap
+479398,Ather Charging Station,21.651429999999998,85.59394999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479397,Ather Grid Charging Station,21.491887,83.9860082,Unknown,Odisha,Unknown,OpenChargeMap
+479396,Ather Grid Charging Station,21.467634,83.97726399999999,Unknown,Odisha,Unknown,OpenChargeMap
+479395,Tata Power Charging Station,21.5106163,84.00592019999999,Unknown,Odisha,Unknown,OpenChargeMap
+479394,Ather Charging Station,21.49525,83.97572,Unknown,Odisha,Unknown,OpenChargeMap
+479393,Tata Power Charging Station,21.501024899999997,83.89131309999999,Unknown,Odisha,Unknown,OpenChargeMap
+479392,BPCL Charging Station,21.494135,83.98228999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479391,Jio-bp,21.6326653,82.15920369999999,Unknown,Odisha,Unknown,OpenChargeMap
+479390,Jio-bp,21.550269999999998,81.94745999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479389,Ather Grid Charging Station,21.51608,81.69389,Unknown,Odisha,Unknown,OpenChargeMap
+479388,PRATIK E RICKSHAW,21.7025644,81.5427175,Unknown,Odisha,Unknown,OpenChargeMap
+479387,Ather Grid Charging Station,21.697687,81.54614,Unknown,Odisha,Unknown,OpenChargeMap
+479386,Tata Power Charging Station,21.63401,81.62389,Unknown,Odisha,Unknown,OpenChargeMap
+479385,BPCL Charging Station,21.5166085,81.69392789999999,Unknown,Odisha,Unknown,OpenChargeMap
+479384,Jio-bp pulse Charging Station,21.317263999999998,86.725105,Unknown,Odisha,Unknown,OpenChargeMap
+479383,Electric Vehicle Charging Station,21.2845369,86.67497949999999,Unknown,Odisha,Unknown,OpenChargeMap
+479382,BPCL Charging Station,21.3825286,86.79633,Unknown,Odisha,Unknown,OpenChargeMap
+479381,BPCL Charging Station,21.358081,86.78445099999999,Unknown,Odisha,Unknown,OpenChargeMap
+479380,Electric Vehicle Charging Station,21.2216615,86.1190697,Unknown,Odisha,Unknown,OpenChargeMap
+479379,Ather Grid Charging Station,21.200249,86.12389,Unknown,Odisha,Unknown,OpenChargeMap
+479378,BPCL Charging Station,21.3652959,83.7440391,Unknown,Odisha,Unknown,OpenChargeMap
+479377,BPCL Charging Station,21.314256999999998,83.45897819999999,Unknown,Odisha,Unknown,OpenChargeMap
+479376,BPCL Charging Station,21.312703799999998,83.3128902,Unknown,Odisha,Unknown,OpenChargeMap
+479375,BPCL Charging Station,21.314738,83.30917099999999,Unknown,Odisha,Unknown,OpenChargeMap
+479374,Adani Charging Station,21.296246,82.921301,Unknown,Odisha,Unknown,OpenChargeMap
+479373,Ather Grid Charging Station,21.323919999999998,81.7012,Unknown,Odisha,Unknown,OpenChargeMap
+479372,Electric Vehicle Charging Station,21.202065599999997,81.9192961,Unknown,Odisha,Unknown,OpenChargeMap
+479371,BPCL Charging Station,21.205784500000004,81.872112,Unknown,Odisha,Unknown,OpenChargeMap
+479370,Jio-bp,21.302802699999997,81.7368091,Unknown,Odisha,Unknown,OpenChargeMap
+479369,Electric Vehicle Charging Station,21.2182526,81.6301313,Unknown,Odisha,Unknown,OpenChargeMap
+479368,NIKOL EV Charging Station,21.3173134,81.63971839999999,Unknown,Odisha,Unknown,OpenChargeMap
+479367,Tata Power Charging Station,21.2377887,81.6896835,Unknown,Odisha,Unknown,OpenChargeMap
+479366,BPCL Charging Station,21.2495941,81.523425,Unknown,Odisha,Unknown,OpenChargeMap
+479365,Jio-bp,21.341343,81.429919,Unknown,Odisha,Unknown,OpenChargeMap
+479364,BPCL Charging Station,21.364805999999998,81.66376439999999,Unknown,Odisha,Unknown,OpenChargeMap
+479363,Ather Grid Charging Station,21.2416455,81.4959004,Unknown,Odisha,Unknown,OpenChargeMap
+479362,BPCL Charging Station,21.335393999999997,81.62172699999999,Unknown,Odisha,Unknown,OpenChargeMap
+479361,Tata Power Charging Station,21.2404095,81.6577801,Unknown,Odisha,Unknown,OpenChargeMap
+479360,Ather Grid Charging Station,21.2444126,81.607608,Unknown,Odisha,Unknown,OpenChargeMap
+479359,BPCL Charging Station,21.315832999999998,81.639605,Unknown,Odisha,Unknown,OpenChargeMap
+479358,Laxmi E Bike Solution,21.2346227,81.6644444,Unknown,Odisha,Unknown,OpenChargeMap
+479357,Ather Grid Charging Station,21.2404001,81.6029695,Unknown,Odisha,Unknown,OpenChargeMap
+479356,BPCL Charging Station,21.24332,81.579622,Unknown,Odisha,Unknown,OpenChargeMap
+479355,Electric Vehicle Charging Station,21.2350671,81.6309002,Unknown,Odisha,Unknown,OpenChargeMap
+479354,Ather Charging Station,21.244000399999997,81.6347188,Unknown,Odisha,Unknown,OpenChargeMap
+479353,Ather Charging Station,21.225600999999997,81.6560523,Unknown,Odisha,Unknown,OpenChargeMap
+479352,Tata Power Charging Station,21.255368300000004,81.62945309999999,Unknown,Odisha,Unknown,OpenChargeMap
+479351,Ather Grid Charging Station,21.2402071,81.6843083,Unknown,Odisha,Unknown,OpenChargeMap
+479350,Ola Charging Station,21.2395532,81.67767140000001,Unknown,Odisha,Unknown,OpenChargeMap
+479349,Bolt.Earth,21.0984032,86.52668419999999,Unknown,Odisha,Unknown,OpenChargeMap
+479348,Ather Grid Charging Station,21.071771,86.49831999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479347,Jio-bp pulse Charging Station,21.070288100000003,86.4970845,Unknown,Odisha,Unknown,OpenChargeMap
+479346,Jio-bp pulse Charging Station,20.9758779,86.4012231,Unknown,Odisha,Unknown,OpenChargeMap
+479345,Tata Power Charging Station,21.069810000000004,86.496256,Unknown,Odisha,Unknown,OpenChargeMap
+479344,Ather Grid Charging Station,21.104305,86.532646,Unknown,Odisha,Unknown,OpenChargeMap
+479343,Ather Grid Charging Station,20.9362048,86.1646624,Unknown,Odisha,Unknown,OpenChargeMap
+479342,Tata Power Charging Station,20.918958699999997,86.2169684,Unknown,Odisha,Unknown,OpenChargeMap
+479341,Electric Vehicle Charging Station,20.986724199999998,85.98919599999999,Unknown,Odisha,Unknown,OpenChargeMap
+479340,Tata Power Charging Station,20.9502562,85.989753,Unknown,Odisha,Unknown,OpenChargeMap
+479339,BPCL Charging Station,21.068530799999998,82.3617326,Unknown,Odisha,Unknown,OpenChargeMap
+479338,EESL Charging Station,21.163620599999998,81.78835800000002,Unknown,Odisha,Unknown,OpenChargeMap
+479337,Tata Power Charging Station,21.161282099999998,81.796672,Unknown,Odisha,Unknown,OpenChargeMap
+479336,EESL Charging Station,21.161336799999997,81.7964476,Unknown,Odisha,Unknown,OpenChargeMap
+479335,BPCL Charging Station,21.0784588,81.7518659,Unknown,Odisha,Unknown,OpenChargeMap
+479334,Ather Grid Charging Station,21.134089499999998,81.7723539,Unknown,Odisha,Unknown,OpenChargeMap
+479333,BPCL Charging Station,21.0435101,81.7320747,Unknown,Odisha,Unknown,OpenChargeMap
+479332,Om sai corporation e rickshaw,21.047829399999998,81.53317779999999,Unknown,Odisha,Unknown,OpenChargeMap
+479331,Electric Vehicle Charging Station,21.035982,81.54613220000002,Unknown,Odisha,Unknown,OpenChargeMap
+479330,Electric Vehicle Charging Station,21.0161093,81.7029005,Unknown,Odisha,Unknown,OpenChargeMap
+479329,Hindustan Petroleum Corporation Limited,20.838154,86.30842299999999,Unknown,Odisha,Unknown,OpenChargeMap
+479328,Ather Grid Charging Station,20.703937099999997,86.1341964,Unknown,Odisha,Unknown,OpenChargeMap
+479327,Jio-bp pulse Charging Station,20.752399,86.150857,Unknown,Odisha,Unknown,OpenChargeMap
+479326,Electric Vehicle Charging Station,20.6581671,86.11731379999999,Unknown,Odisha,Unknown,OpenChargeMap
+479325,Ampere EV by Greaves - Green Wheels,20.694237899999997,86.1328793,Unknown,Odisha,Unknown,OpenChargeMap
+479324,BPCL Charging Station,20.656229,86.112809,Unknown,Odisha,Unknown,OpenChargeMap
+479323,Ather Grid Charging Station,20.669519899999997,85.5922933,Unknown,Odisha,Unknown,OpenChargeMap
+479322,Jio-bp,20.8014756,85.5434702,Unknown,Odisha,Unknown,OpenChargeMap
+479321,Tata Power Charging Station,20.8317557,85.24166029999999,Unknown,Odisha,Unknown,OpenChargeMap
+479320,Thunder Plus Charging Station,20.8317352,85.2416586,Unknown,Odisha,Unknown,OpenChargeMap
+479319,Tata Power Ez Charging Station,20.832793199999998,85.23828859999999,Unknown,Odisha,Unknown,OpenChargeMap
+479318,Ather Grid Charging Station,20.832794,85.085236,Unknown,Odisha,Unknown,OpenChargeMap
+479317,Tata Power Charging Station,20.8450685,85.1162026,Unknown,Odisha,Unknown,OpenChargeMap
+479316,Hindustan Petroleum Corporation Limited Charging Station,20.8235109,85.0620926,Unknown,Odisha,Unknown,OpenChargeMap
+479315,Hindustan Petroleum Corporation Limited,20.8234079,85.06204989999999,Unknown,Odisha,Unknown,OpenChargeMap
+479314,Jio-bp,20.80489,84.03399,Unknown,Odisha,Unknown,OpenChargeMap
+479313,Electric Vehicle Charging Station,20.857754099999998,83.94418209999999,Unknown,Odisha,Unknown,OpenChargeMap
+479312,Electric Vehicle Charging Station,20.8471861,83.89413499999999,Unknown,Odisha,Unknown,OpenChargeMap
+479311,Tata Power Charging Station,20.7425344,81.5791428,Unknown,Odisha,Unknown,OpenChargeMap
+479310,BPCL Charging Station,20.817085,81.68281019999999,Unknown,Odisha,Unknown,OpenChargeMap
+479309,Ather Grid Charging Station,20.5307153,86.3579333,Unknown,Odisha,Unknown,OpenChargeMap
+479308,kesannager electric office,20.4209459,86.0903038,Unknown,Odisha,Unknown,OpenChargeMap
+479307,Adani Charging Station,20.482358899999998,86.0581588,Unknown,Odisha,Unknown,OpenChargeMap
+479306,Tata Power Charging Station,20.3702497,85.8909745,Unknown,Odisha,Unknown,OpenChargeMap
+479305,Ather Grid Charging Station,20.491885999999997,85.93527,Unknown,Odisha,Unknown,OpenChargeMap
+479304,Ather Grid Charging Station,20.4791192,85.8398223,Unknown,Odisha,Unknown,OpenChargeMap
+479303,Tata Power Charging Station,20.529315999999998,85.949237,Unknown,Odisha,Unknown,OpenChargeMap
+479302,Ather Grid Charging Station,20.453737,85.88848999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479301,Electric Vehicle Charging Station,20.4116317,85.8794133,Unknown,Odisha,Unknown,OpenChargeMap
+479300,Tata Power Charging Station,20.481787,85.81721300000001,Unknown,Odisha,Unknown,OpenChargeMap
+479299,Ather Grid Charging Station,20.4497938,85.8982001,Unknown,Odisha,Unknown,OpenChargeMap
+479298,Ather Grid Charging Station,20.469631,85.85469,Unknown,Odisha,Unknown,OpenChargeMap
+479297,Ather Grid Charging Station,20.460117,85.88938,Unknown,Odisha,Unknown,OpenChargeMap
+479296,Ather Grid Charging Station,20.442349999999998,85.90481,Unknown,Odisha,Unknown,OpenChargeMap
+479295,Bal Gopal Motors,20.4551603,85.88665549999999,Unknown,Odisha,Unknown,OpenChargeMap
+479294,Ather Charging Station,20.446043,85.9069427,Unknown,Odisha,Unknown,OpenChargeMap
+479293,Ather Grid Charging Station,20.4660615,85.9053606,Unknown,Odisha,Unknown,OpenChargeMap
+479292,Ather Grid Charging Station,20.474403,85.84479979999999,Unknown,Odisha,Unknown,OpenChargeMap
+479291,Tata Power Charging Station,20.4051611,85.8798077,Unknown,Odisha,Unknown,OpenChargeMap
+479290,Jio-bp pulse Charging Station,20.5506603,85.774418,Unknown,Odisha,Unknown,OpenChargeMap
+479289,Ather Grid Charging Station,20.4621758,85.8837439,Unknown,Odisha,Unknown,OpenChargeMap
+479288,Jio-bp pulse EV Charging Station,20.3770148,85.8893793,Unknown,Odisha,Unknown,OpenChargeMap
+479287,Hindustan Petroleum Corporation Limited,20.5512697,85.98549589999999,Unknown,Odisha,Unknown,OpenChargeMap
+479286,Hindustan Petroleum Corporation Limited,20.289510099999998,86.6453834,Unknown,Odisha,Unknown,OpenChargeMap
+479285,Tata Power Charging Station,20.307243,86.320751,Unknown,Odisha,Unknown,OpenChargeMap
+479284,Ather Grid Charging Station,20.260697399999998,86.20164369999999,Unknown,Odisha,Unknown,OpenChargeMap
+479283,BPCL Charging Station,20.193901,85.85999199999999,Unknown,Odisha,Unknown,OpenChargeMap
+479282,Electric Vehicle Charging Station,20.289134999999998,85.8152489,Unknown,Odisha,Unknown,OpenChargeMap
+479281,Ather Grid Charging Station,20.315431999999998,85.82054,Unknown,Odisha,Unknown,OpenChargeMap
+479280,Adani Charging Station,20.3570179,85.88882029999999,Unknown,Odisha,Unknown,OpenChargeMap
+479279,Ather Grid Charging Station,20.256187,85.78683749999999,Unknown,Odisha,Unknown,OpenChargeMap
+479278,Ather Grid Charging Station,20.2614172,85.84389929999999,Unknown,Odisha,Unknown,OpenChargeMap
+479277,Tata Power Charging Station,20.299550099999998,85.8309735,Unknown,Odisha,Unknown,OpenChargeMap
+479276,Statiq Charging Station,20.2914763,85.8560122,Unknown,Odisha,Unknown,OpenChargeMap
+479275,Ather Grid Charging Station,20.2669537,85.8694239,Unknown,Odisha,Unknown,OpenChargeMap
+479274,Ather Charging Station,20.2640837,85.8457679,Unknown,Odisha,Unknown,OpenChargeMap
+479273,Statiq Charging Station,20.245772,85.78304299999999,Unknown,Odisha,Unknown,OpenChargeMap
+479272,Tata Power Charging Station,20.259014,85.8397059,Unknown,Odisha,Unknown,OpenChargeMap
+479271,Ather Grid Charging Station,20.2710386,85.7838293,Unknown,Odisha,Unknown,OpenChargeMap
+479270,Ather Grid Charging Station,20.2986351,85.8227086,Unknown,Odisha,Unknown,OpenChargeMap
+479269,Adani Charging Station,20.2529878,85.81877899999999,Unknown,Odisha,Unknown,OpenChargeMap
+479268,Ather Charging Station,20.2476107,85.8409846,Unknown,Odisha,Unknown,OpenChargeMap
+479267,Ather Grid Charging Station,20.283109,85.80601109999999,Unknown,Odisha,Unknown,OpenChargeMap
+479266,BPCL Charging Station,20.25473,85.787241,Unknown,Odisha,Unknown,OpenChargeMap
+479265,Tata Power Charging Station,20.2269974,85.841081,Unknown,Odisha,Unknown,OpenChargeMap
+479264,Ola Electric Mobility Charging Station,20.2573761,85.84097299999999,Unknown,Odisha,Unknown,OpenChargeMap
+479263,DiodeEV Charging Station,20.227714799999998,85.73563039999999,Unknown,Odisha,Unknown,OpenChargeMap
+479262,Statiq Charging Station,20.205643,85.644066,Unknown,Odisha,Unknown,OpenChargeMap
+479261,Tata Power Charging Station,20.241180099999998,85.75915549999999,Unknown,Odisha,Unknown,OpenChargeMap
+479260,Tata Power Charging Station,20.238165,85.75664300000001,Unknown,Odisha,Unknown,OpenChargeMap
+479259,Kazam Charging Station,20.2555141,85.6866637,Unknown,Odisha,Unknown,OpenChargeMap
+479258,Thunder Plus Charging Station,20.242777999999998,85.75611699999999,Unknown,Odisha,Unknown,OpenChargeMap
+479257,Kazam Charging Station,20.253022299999998,85.6869698,Unknown,Odisha,Unknown,OpenChargeMap
+479256,Kazam Charging Station,20.254699199999997,85.6867814,Unknown,Odisha,Unknown,OpenChargeMap
+479255,Tata Power Charging Station,20.230607799999998,85.7376707,Unknown,Odisha,Unknown,OpenChargeMap
+479254,Tata Power Charging Station,20.2407436,85.7590281,Unknown,Odisha,Unknown,OpenChargeMap
+479253,Electric Vehicle Charging Station,20.223618,85.726762,Unknown,Odisha,Unknown,OpenChargeMap
+479252,Electric Vehicle Charging Station,20.1939131,85.65214879999999,Unknown,Odisha,Unknown,OpenChargeMap
+479251,Ather Grid Charging Station,20.178873,85.61153,Unknown,Odisha,Unknown,OpenChargeMap
+479250,Hindustan Petroleum Corporation Limited,20.154535799999998,85.0637881,Unknown,Odisha,Unknown,OpenChargeMap
+479249,Jio-bp,20.141301,83.968362,Unknown,Odisha,Unknown,OpenChargeMap
+479248,Electric Vehicle Charging Station,20.2027864,82.936256,Unknown,Odisha,Unknown,OpenChargeMap
+479247,BPCL Charging Station,20.3013862,82.7516433,Unknown,Odisha,Unknown,OpenChargeMap
+479246,"MIRZA RIYAZ HOUSE , CONNON XEROX SERVICE CENTRE,",20.0299963,86.13191499999999,Unknown,Odisha,Unknown,OpenChargeMap
+479245,Jio-bp pulse Charging Station,20.036226000000003,85.825447,Unknown,Odisha,Unknown,OpenChargeMap
+479244,Jio-bp pulse Charging Station,19.981225700000003,85.8251193,Unknown,Odisha,Unknown,OpenChargeMap
+479243,Ather Charging Station,20.001994,85.8205414,Unknown,Odisha,Unknown,OpenChargeMap
+479242,Ather Grid Charging Station,19.913864,85.98975,Unknown,Odisha,Unknown,OpenChargeMap
+479241,Electric Vehicle Charging Station,20.0089777,85.8138496,Unknown,Odisha,Unknown,OpenChargeMap
+479240,BPCL Charging Station,20.0090935,85.81383199999999,Unknown,Odisha,Unknown,OpenChargeMap
+479239,Tata Power Charging Station,19.8373153,85.8366266,Unknown,Odisha,Unknown,OpenChargeMap
+479238,Hindustan Petroleum Corporation Limited,19.887408999999998,85.803106,Unknown,Odisha,Unknown,OpenChargeMap
+479237,Ather Grid Charging Station,19.864923,85.66566999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479236,Tata Power Charging Station,19.9604389,85.4336031,Unknown,Odisha,Unknown,OpenChargeMap
+479235,BPCL Charging Station,19.995597,85.479968,Unknown,Odisha,Unknown,OpenChargeMap
+479234,Hindustan Petroleum Corporation Limited,19.9901672,85.4736527,Unknown,Odisha,Unknown,OpenChargeMap
+479233,Ather Grid Charging Station,19.924364,84.57135,Unknown,Odisha,Unknown,OpenChargeMap
+479232,Jio-bp,20.038907,84.63856899999999,Unknown,Odisha,Unknown,OpenChargeMap
+479231,Tata Power Charging Station,19.924915,83.174075,Unknown,Odisha,Unknown,OpenChargeMap
+479230,Electric Vehicle Charging Station,20.0887924,82.36210489999999,Unknown,Odisha,Unknown,OpenChargeMap
+479229,G.K Rickshaw,19.8134808,85.8362997,Unknown,Odisha,Unknown,OpenChargeMap
+479228,Ather Grid Charging Station,19.7952607,85.8132809,Unknown,Odisha,Unknown,OpenChargeMap
+479227,KACHERI SECTION TPCODL,19.802419699999998,85.8239399,Unknown,Odisha,Unknown,OpenChargeMap
+479226,Relux Charging Station,19.790746199999997,85.8030868,Unknown,Odisha,Unknown,OpenChargeMap
+479225,Electric Vehicle Charging Station,19.718937999999998,85.5235713,Unknown,Odisha,Unknown,OpenChargeMap
+479224,Ather Grid Charging Station,19.799158,85.664566,Unknown,Odisha,Unknown,OpenChargeMap
+479223,Ather Grid Charging Station,19.71935,85.52448679999999,Unknown,Odisha,Unknown,OpenChargeMap
+479222,Jio-bp pulse Charging Station,19.678549999999998,85.171409,Unknown,Odisha,Unknown,OpenChargeMap
+479221,Tata Power Charging Station,19.6782474,85.1714786,Unknown,Odisha,Unknown,OpenChargeMap
+479220,Adani Charging Station,19.6331555,85.1353263,Unknown,Odisha,Unknown,OpenChargeMap
+479219,BPCL Charging Station,19.749316,85.20759799999999,Unknown,Odisha,Unknown,OpenChargeMap
+479218,Jio-bp,19.731375,83.479141,Unknown,Odisha,Unknown,OpenChargeMap
+479217,Tata Power Charging Station,19.652452999999998,82.225619,Unknown,Odisha,Unknown,OpenChargeMap
+479216,Ather Grid Charging Station,19.31151,84.83354,Unknown,Odisha,Unknown,OpenChargeMap
+479215,Ather Grid Charging Station,19.34123,84.76845,Unknown,Odisha,Unknown,OpenChargeMap
+479214,Ather Grid Charging Station,19.324255,84.87503,Unknown,Odisha,Unknown,OpenChargeMap
+479213,Electric Vehicle Charging Station,19.3171717,84.7772474,Unknown,Odisha,Unknown,OpenChargeMap
+479212,Electric Vehicle Charging Station,19.3071386,84.8292277,Unknown,Odisha,Unknown,OpenChargeMap
+479211,Electric Vehicle Charging Station,19.3194175,84.7844863,Unknown,Odisha,Unknown,OpenChargeMap
+479210,Ather Grid Charging Station,19.308462,84.77319,Unknown,Odisha,Unknown,OpenChargeMap
+479209,Ather Grid Charging Station,19.301503999999998,84.83013,Unknown,Odisha,Unknown,OpenChargeMap
+479208,Ather Grid Charging Station,19.306037999999997,84.78173,Unknown,Odisha,Unknown,OpenChargeMap
+479207,Tata Power Charging Station,19.315210999999998,84.85814400000001,Unknown,Odisha,Unknown,OpenChargeMap
+479206,Ather Grid Charging Station,19.31608,84.85278,Unknown,Odisha,Unknown,OpenChargeMap
+479205,Ather Grid Charging Station,19.30744,84.81665,Unknown,Odisha,Unknown,OpenChargeMap
+479204,Electric Vehicle Charging Station,19.3176997,84.79058359999999,Unknown,Odisha,Unknown,OpenChargeMap
+479203,Ather Grid Charging Station,19.32163,84.86715,Unknown,Odisha,Unknown,OpenChargeMap
+479202,Ather Grid Charging Station,19.319885,84.78112999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479201,Ather Grid Charging Station,19.2956471,84.81956579999999,Unknown,Odisha,Unknown,OpenChargeMap
+479200,BPCL Charging Station,19.334626999999998,84.768619,Unknown,Odisha,Unknown,OpenChargeMap
+479199,Ather Charging Station,19.3057277,84.7817268,Unknown,Odisha,Unknown,OpenChargeMap
+479198,Ather Grid Charging Station,19.303380999999998,84.79504399999999,Unknown,Odisha,Unknown,OpenChargeMap
+479197,Tata Power Charging Station,19.2991714,84.83176309999999,Unknown,Odisha,Unknown,OpenChargeMap
+479196,Maa Tara Tarini Tour And Travels,19.447535,84.591458,Unknown,Odisha,Unknown,OpenChargeMap
+479195,Electric Vehicle Charging Station,19.180775999999998,84.725327,Unknown,Odisha,Unknown,OpenChargeMap
+479194,Ather Grid Charging Station,19.268919999999998,84.77745,Unknown,Odisha,Unknown,OpenChargeMap
+479193,BPCL Charging Station,19.183324000000002,84.727616,Unknown,Odisha,Unknown,OpenChargeMap
+479192,Ather Grid Charging Station,19.194212,84.61756,Unknown,Odisha,Unknown,OpenChargeMap
+479191,Ather Grid Charging Station,18.845465,84.50309999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479190,DIMILI VILLAGE,18.802062499999998,83.9918125,Unknown,Odisha,Unknown,OpenChargeMap
+479189,Electric Vehicle Charging Station,18.7689167,83.4215387,Unknown,Odisha,Unknown,OpenChargeMap
+479188,Tata Power Charging Station,18.8582131,82.5899051,Unknown,Odisha,Unknown,OpenChargeMap
+479187,BPCL Charging Station,18.84732,82.56517099999999,Unknown,Odisha,Unknown,OpenChargeMap
+479186,Ather Grid Charging Station,18.606023999999998,84.22991499999999,Unknown,Odisha,Unknown,OpenChargeMap
+479185,Tata Power Charging Station,18.534753,83.651339,Unknown,Odisha,Unknown,OpenChargeMap
+479184,okinawa electric scooter,18.597046499999998,83.7640945,Unknown,Odisha,Unknown,OpenChargeMap
+479183,Electric Vehicle Charging Station,18.6104394,83.39922849999999,Unknown,Odisha,Unknown,OpenChargeMap
+479182,Tata Power Charging Station,18.503509299999997,83.2469705,Unknown,Odisha,Unknown,OpenChargeMap
+479181,Jio-bp,18.7012078,82.879837,Unknown,Odisha,Unknown,OpenChargeMap
+479180,Ather Grid Charging Station,18.295932999999998,83.893148,Unknown,Odisha,Unknown,OpenChargeMap
+479179,Jio-bp pulse Charging Station,18.3262791,83.941268,Unknown,Odisha,Unknown,OpenChargeMap
+479178,Tata Power Charging Station,18.3243588,83.9391102,Unknown,Odisha,Unknown,OpenChargeMap
+479177,DK MOTORS,18.322673599999998,83.893722,Unknown,Odisha,Unknown,OpenChargeMap
+479176,Urzza Charging Station,18.424328499999998,84.04802459999999,Unknown,Odisha,Unknown,OpenChargeMap
+479175,Ather Energy Charging Station,18.309545999999997,83.91882,Unknown,Odisha,Unknown,OpenChargeMap
+479174,Voltran Charging Station,18.3004408,83.8711628,Unknown,Odisha,Unknown,OpenChargeMap
+479173,Jio-bp,18.289378,83.914594,Unknown,Odisha,Unknown,OpenChargeMap
+479172,Ather Grid Charging Station,18.2791756,83.5261386,Unknown,Odisha,Unknown,OpenChargeMap
+479171,AtherGrid Charging Station,18.337203799999997,82.87792549999999,Unknown,Odisha,Unknown,OpenChargeMap
+479170,Ather Grid Charging Station,18.3225938,82.8776518,Unknown,Odisha,Unknown,OpenChargeMap
+479169,Charzer Charging Station,18.295865199999998,82.9144748,Unknown,Odisha,Unknown,OpenChargeMap
+479168,Electric Vehicle Charging Station,18.3137141,82.8937424,Unknown,Odisha,Unknown,OpenChargeMap
+479167,Tata Power Charging Station,18.139519,83.617595,Unknown,Odisha,Unknown,OpenChargeMap
+479166,Jio-bp pulse Charging Station,18.1499177,83.6353106,Unknown,Odisha,Unknown,OpenChargeMap
+479165,Tata Power Charging Station,18.173032,83.676949,Unknown,Odisha,Unknown,OpenChargeMap
+479164,JoulePoint Charging Station,18.0418515,83.50972209999999,Unknown,Odisha,Unknown,OpenChargeMap
+479163,Bolt.Earth Charging Station,18.0203857,83.4020948,Unknown,Odisha,Unknown,OpenChargeMap
+479162,Ather Grid Charging Station,18.0565007,83.3971128,Unknown,Odisha,Unknown,OpenChargeMap
+479161,Electric Vehicle Charging Station,18.057097199999998,83.39718810000001,Unknown,Odisha,Unknown,OpenChargeMap
+479160,ParkNConnect Charging Station,18.092801599999998,83.3884047,Unknown,Odisha,Unknown,OpenChargeMap
+479159,Ather Grid Charging Station,18.080786,83.38528,Unknown,Odisha,Unknown,OpenChargeMap
+479158,Hindustan Petroleum Corporation Limited Charging Station,17.9524227,83.4163581,Unknown,Odisha,Unknown,OpenChargeMap
+479157,Ather Grid Charging Station,18.0801438,83.38535089999999,Unknown,Odisha,Unknown,OpenChargeMap
+479156,Hindustan Petroleum Corporation Limited,17.952420999999998,83.416311,Unknown,Odisha,Unknown,OpenChargeMap
+479155,Tata Power Charging Station,17.957767699999998,83.1773604,Unknown,Odisha,Unknown,OpenChargeMap
+479154,Ather Grid Charging Station,18.116682,83.13772,Unknown,Odisha,Unknown,OpenChargeMap
+479153,Tata Power Charging Station,17.957767699999998,83.1773604,Unknown,Odisha,Unknown,OpenChargeMap
+479152,Ather Grid Charging Station,18.116682,83.13772,Unknown,Odisha,Unknown,OpenChargeMap
+479145,BPCL Charging Station,19.995597,85.479968,Unknown,Odisha,Unknown,OpenChargeMap
+479144,Hindustan Petroleum Corporation Limited,19.9901672,85.4736527,Unknown,Odisha,Unknown,OpenChargeMap
+479143,Ather Grid Charging Station,19.924364,84.57135,Unknown,Odisha,Unknown,OpenChargeMap
+479142,Jio-bp,20.038907,84.63856899999999,Unknown,Odisha,Unknown,OpenChargeMap
+479141,Tata Power Charging Station,19.924915,83.174075,Unknown,Odisha,Unknown,OpenChargeMap
+479140,Electric Vehicle Charging Station,20.0887924,82.36210489999999,Unknown,Odisha,Unknown,OpenChargeMap
+479139,G.K Rickshaw,19.8134808,85.8362997,Unknown,Odisha,Unknown,OpenChargeMap
+479138,Ather Grid Charging Station,19.7952607,85.8132809,Unknown,Odisha,Unknown,OpenChargeMap
+479137,KACHERI SECTION TPCODL,19.802419699999998,85.8239399,Unknown,Odisha,Unknown,OpenChargeMap
+479136,Relux Charging Station,19.790746199999997,85.8030868,Unknown,Odisha,Unknown,OpenChargeMap
+479135,Electric Vehicle Charging Station,19.718937999999998,85.5235713,Unknown,Odisha,Unknown,OpenChargeMap
+479134,Ather Grid Charging Station,19.799158,85.664566,Unknown,Odisha,Unknown,OpenChargeMap
+479133,Ather Grid Charging Station,19.71935,85.52448679999999,Unknown,Odisha,Unknown,OpenChargeMap
+479132,Jio-bp pulse Charging Station,19.678549999999998,85.171409,Unknown,Odisha,Unknown,OpenChargeMap
+479131,Tata Power Charging Station,19.6782474,85.1714786,Unknown,Odisha,Unknown,OpenChargeMap
+479130,Adani Charging Station,19.6331555,85.1353263,Unknown,Odisha,Unknown,OpenChargeMap
+479129,BPCL Charging Station,19.749316,85.20759799999999,Unknown,Odisha,Unknown,OpenChargeMap
+479128,Jio-bp,19.731375,83.479141,Unknown,Odisha,Unknown,OpenChargeMap
+479127,Tata Power Charging Station,19.652452999999998,82.225619,Unknown,Odisha,Unknown,OpenChargeMap
+479126,Ather Grid Charging Station,19.31151,84.83354,Unknown,Odisha,Unknown,OpenChargeMap
+479125,Ather Grid Charging Station,19.34123,84.76845,Unknown,Odisha,Unknown,OpenChargeMap
+479124,Ather Grid Charging Station,19.324255,84.87503,Unknown,Odisha,Unknown,OpenChargeMap
+479123,Electric Vehicle Charging Station,19.3171717,84.7772474,Unknown,Odisha,Unknown,OpenChargeMap
+479122,Electric Vehicle Charging Station,19.3071386,84.8292277,Unknown,Odisha,Unknown,OpenChargeMap
+479121,Electric Vehicle Charging Station,19.3194175,84.7844863,Unknown,Odisha,Unknown,OpenChargeMap
+479120,Ather Grid Charging Station,19.308462,84.77319,Unknown,Odisha,Unknown,OpenChargeMap
+479119,Ather Grid Charging Station,19.301503999999998,84.83013,Unknown,Odisha,Unknown,OpenChargeMap
+479118,Ather Grid Charging Station,19.306037999999997,84.78173,Unknown,Odisha,Unknown,OpenChargeMap
+479117,Tata Power Charging Station,19.315210999999998,84.85814400000001,Unknown,Odisha,Unknown,OpenChargeMap
+479116,Ather Grid Charging Station,19.31608,84.85278,Unknown,Odisha,Unknown,OpenChargeMap
+479115,Ather Grid Charging Station,19.30744,84.81665,Unknown,Odisha,Unknown,OpenChargeMap
+479114,Electric Vehicle Charging Station,19.3176997,84.79058359999999,Unknown,Odisha,Unknown,OpenChargeMap
+479113,Ather Grid Charging Station,19.32163,84.86715,Unknown,Odisha,Unknown,OpenChargeMap
+479112,Ather Grid Charging Station,19.319885,84.78112999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479111,Ather Grid Charging Station,19.2956471,84.81956579999999,Unknown,Odisha,Unknown,OpenChargeMap
+479110,BPCL Charging Station,19.334626999999998,84.768619,Unknown,Odisha,Unknown,OpenChargeMap
+479109,Ather Charging Station,19.3057277,84.7817268,Unknown,Odisha,Unknown,OpenChargeMap
+479108,Ather Grid Charging Station,19.303380999999998,84.79504399999999,Unknown,Odisha,Unknown,OpenChargeMap
+479107,Tata Power Charging Station,19.2991714,84.83176309999999,Unknown,Odisha,Unknown,OpenChargeMap
+479106,Maa Tara Tarini Tour And Travels,19.447535,84.591458,Unknown,Odisha,Unknown,OpenChargeMap
+479105,Electric Vehicle Charging Station,19.180775999999998,84.725327,Unknown,Odisha,Unknown,OpenChargeMap
+479104,Ather Grid Charging Station,19.268919999999998,84.77745,Unknown,Odisha,Unknown,OpenChargeMap
+479103,BPCL Charging Station,19.183324000000002,84.727616,Unknown,Odisha,Unknown,OpenChargeMap
+479102,Ather Grid Charging Station,19.194212,84.61756,Unknown,Odisha,Unknown,OpenChargeMap
+479101,Ather Grid Charging Station,18.845465,84.50309999999999,Unknown,Odisha,Unknown,OpenChargeMap
+479100,DIMILI VILLAGE,18.802062499999998,83.9918125,Unknown,Odisha,Unknown,OpenChargeMap
+479099,Electric Vehicle Charging Station,18.7689167,83.4215387,Unknown,Odisha,Unknown,OpenChargeMap
+479098,Tata Power Charging Station,18.8582131,82.5899051,Unknown,Odisha,Unknown,OpenChargeMap
+479097,BPCL Charging Station,18.84732,82.56517099999999,Unknown,Odisha,Unknown,OpenChargeMap
+479096,Ather Grid Charging Station,18.606023999999998,84.22991499999999,Unknown,Odisha,Unknown,OpenChargeMap
+479095,Tata Power Charging Station,18.534753,83.651339,Unknown,Odisha,Unknown,OpenChargeMap
+479094,okinawa electric scooter,18.597046499999998,83.7640945,Unknown,Odisha,Unknown,OpenChargeMap
+479093,Electric Vehicle Charging Station,18.6104394,83.39922849999999,Unknown,Odisha,Unknown,OpenChargeMap
+479092,Tata Power Charging Station,18.503509299999997,83.2469705,Unknown,Odisha,Unknown,OpenChargeMap
+479091,Jio-bp,18.7012078,82.879837,Unknown,Odisha,Unknown,OpenChargeMap
+479090,Ather Grid Charging Station,18.295932999999998,83.893148,Unknown,Odisha,Unknown,OpenChargeMap
+479089,Jio-bp pulse Charging Station,18.3262791,83.941268,Unknown,Odisha,Unknown,OpenChargeMap
+479088,Tata Power Charging Station,18.3243588,83.9391102,Unknown,Odisha,Unknown,OpenChargeMap
+479086,DK MOTORS,18.322673599999998,83.893722,Unknown,Odisha,Unknown,OpenChargeMap
+479085,Urzza Charging Station,18.424328499999998,84.04802459999999,Unknown,Odisha,Unknown,OpenChargeMap
+479084,Ather Energy Charging Station,18.309545999999997,83.91882,Unknown,Odisha,Unknown,OpenChargeMap
+479083,Voltran Charging Station,18.3004408,83.8711628,Unknown,Odisha,Unknown,OpenChargeMap
+479082,Jio-bp,18.289378,83.914594,Unknown,Odisha,Unknown,OpenChargeMap
+479081,Ather Grid Charging Station,18.2791756,83.5261386,Unknown,Odisha,Unknown,OpenChargeMap
+479080,AtherGrid Charging Station,18.337203799999997,82.87792549999999,Unknown,Odisha,Unknown,OpenChargeMap
+479079,Ather Grid Charging Station,18.3225938,82.8776518,Unknown,Odisha,Unknown,OpenChargeMap
+479078,Charzer Charging Station,18.295865199999998,82.9144748,Unknown,Odisha,Unknown,OpenChargeMap
+479077,Electric Vehicle Charging Station,18.3137141,82.8937424,Unknown,Odisha,Unknown,OpenChargeMap
+479076,Tata Power Charging Station,18.139519,83.617595,Unknown,Odisha,Unknown,OpenChargeMap
+479075,Jio-bp pulse Charging Station,18.1499177,83.6353106,Unknown,Odisha,Unknown,OpenChargeMap
+479074,Tata Power Charging Station,18.173032,83.676949,Unknown,Odisha,Unknown,OpenChargeMap
+479073,JoulePoint Charging Station,18.0418515,83.50972209999999,Unknown,Odisha,Unknown,OpenChargeMap
+479072,Bolt.Earth Charging Station,18.0203857,83.4020948,Unknown,Odisha,Unknown,OpenChargeMap
+479071,Ather Grid Charging Station,18.0565007,83.3971128,Unknown,Odisha,Unknown,OpenChargeMap
+479070,Electric Vehicle Charging Station,18.057097199999998,83.39718810000001,Unknown,Odisha,Unknown,OpenChargeMap
+479069,ParkNConnect Charging Station,18.092801599999998,83.3884047,Unknown,Odisha,Unknown,OpenChargeMap
+479068,Ather Grid Charging Station,18.080786,83.38528,Unknown,Odisha,Unknown,OpenChargeMap
+479067,Hindustan Petroleum Corporation Limited Charging Station,17.9524227,83.4163581,Unknown,Odisha,Unknown,OpenChargeMap
+479066,Ather Grid Charging Station,18.0801438,83.38535089999999,Unknown,Odisha,Unknown,OpenChargeMap
+479065,Hindustan Petroleum Corporation Limited,17.952420999999998,83.416311,Unknown,Odisha,Unknown,OpenChargeMap
+479064,Tata Power Charging Station,17.957767699999998,83.1773604,Unknown,Odisha,Unknown,OpenChargeMap
+479063,Ather Grid Charging Station,18.116682,83.13772,Unknown,Odisha,Unknown,OpenChargeMap
+479062,Jio-bp,18.289378,83.914594,Unknown,Odisha,Unknown,OpenChargeMap
+478918,Royal Drive EVCS,8.503495480028349,76.91166164075435,Venpalavattom,Kerala,Unknown,OpenChargeMap
+478917,Poovar PNT EVCS,8.315968832633814,77.09035464903081,Kulathoor,Kerala,Unknown,OpenChargeMap
+478916,Ayyappa EVCS,9.478662771564018,76.84487199188538,Erumely,Kerala,Unknown,OpenChargeMap
+478915,Adimali Rangers,10.014144203609249,76.94382996626405,Adimali,Kerala,Unknown,OpenChargeMap
+478914,Hill View EVCS,10.069936650612604,77.0609419438648,Munnar,Kerala,Unknown,OpenChargeMap
+478913,Cargo Auto Hub EVCS,9.702761974968482,76.72119375310945,Bharananganam,Kerala,Unknown,OpenChargeMap
+478912,Minerva EVCS,9.69257642934194,76.5596900481155,Ettumanoor,Kerala,Unknown,OpenChargeMap
+478911,Savoi Complex EVCS,9.86134074552723,76.59599011191699,Koothattukulam,Kerala,Unknown,OpenChargeMap
+478910,Haridwar EVCS,9.872065277160488,76.5961145873373,Koothattukulam,Kerala,Unknown,OpenChargeMap
+478909,Pattakulam EV Super Charging Station,10.058637624098736,76.65237791798609,Kothamangalam,Kerala,Unknown,OpenChargeMap
+478908,Eco Park EVCS,10.068236156628487,76.38681352633876,Pukkattupady,Kerala,Unknown,OpenChargeMap
+478907,Yash Square EVCS,10.110574970248052,76.3728727396483,Aluva,Kerala,Unknown,OpenChargeMap
+478906,Ie.On EVCS,10.088670267690219,76.42441988441647,Vazhakkulam,Kerala,Unknown,OpenChargeMap
+478905,JP Complex EVCS,10.111540536058044,76.47892756655858,Perumbavoor,Kerala,Unknown,OpenChargeMap
+478904,Electro Spark EVCS,10.163080637651007,76.48721724799293,Perumbavoor,Kerala,Unknown,OpenChargeMap
+478903,Smartvolt EVCS,10.168792563403002,76.4347441321296,Kalady,Kerala,Unknown,OpenChargeMap
+478902,Chendamangalam Combined Energy,10.164520762160521,76.23328993057385,Chendamangalam,Kerala,Unknown,OpenChargeMap
+478901,Ideal EV Super Charging Station,10.149223784894389,76.22650589996533,North Paravur,Kerala,Unknown,OpenChargeMap
+478900,rajeEVam EVCS,10.203141262774878,76.20040094604155,Kodungallur,Kerala,Unknown,OpenChargeMap
+478898,Chavakkad Golden Tower EVCS,10.64297240272117,75.98558047526978,Punnayur,Kerala,Unknown,OpenChargeMap

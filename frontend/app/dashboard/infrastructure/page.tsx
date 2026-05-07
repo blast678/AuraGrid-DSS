@@ -67,7 +67,7 @@ function exportBBMP(recs: Recommendation[]) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `AuraGrid-DSS_BBMP_Export_${new Date().toISOString().slice(0, 10)}.csv`;
+  a.download = `AuraGrid_BBMP_Export_${new Date().toISOString().slice(0, 10)}.csv`;
   a.click();
   URL.revokeObjectURL(url);
 }
@@ -75,7 +75,7 @@ function exportBBMP(recs: Recommendation[]) {
 function generateROI(recs: Recommendation[]) {
   const top = recs[0];
   const report = `
-AURAGRID-DSS INFRASTRUCTURE ROI REPORT
+AURAGRID INFRASTRUCTURE ROI REPORT
 Generated: ${new Date().toLocaleString()}
 BESCOM Decision-Support Layer — Confidential
 
@@ -105,14 +105,14 @@ ALL RANKED SITES:
 ${recs.map((r, i) => `  ${i + 1}. ${r.zone_name}: Score ${r.synergy_score}/100`).join("\n")}
 
 ─────────────────────────────────────────────────
-AuraGrid-DSS v2.4 · BESCOM Smart Grid Division
+AuraGrid v2.4 · BESCOM Smart Grid Division
 Generated for BBMP Infrastructure Planning Cell
   `.trim();
   const blob = new Blob([report], { type: "text/plain" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `AuraGrid-DSS_ROI_Report_${new Date().toISOString().slice(0, 10)}.txt`;
+  a.download = `AuraGrid_ROI_Report_${new Date().toISOString().slice(0, 10)}.txt`;
   a.click();
   URL.revokeObjectURL(url);
 }

@@ -50,7 +50,7 @@ export default function Sidebar() {
           <div>
             <p className="text-sm font-bold tracking-tight"
               style={{ color: "var(--sidebar-foreground)" }}>
-              AuraGrid-DSS
+              AuraGrid
             </p>
             <p className="text-[10px] font-medium uppercase tracking-widest"
               style={{ color: "var(--sidebar-accent-foreground)", opacity: 0.6 }}>

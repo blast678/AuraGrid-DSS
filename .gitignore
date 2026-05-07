@@ -6,7 +6,6 @@
 .env.production.local
 *.pem
 *.key
-ai-engine/data/
 # --- Next.js / Node ---
 node_modules/
 .next/
