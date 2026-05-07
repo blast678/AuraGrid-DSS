@@ -326,7 +326,7 @@ export default function InfrastructurePage() {
                     WHAT
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pt-1 text-xs text-slate-600 pb-3">
-                    Built the "Spatial Optimizer," an interactive Bengaluru heatmap.
+                    Built the "Spatial Optimizer" decision-support layer.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="how" className="border-b-0">
@@ -334,7 +334,7 @@ export default function InfrastructurePage() {
                     HOW
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pt-1 text-xs text-slate-600 pb-3 leading-relaxed">
-                    Engineered a Synergy Score using 3 constraints: 1. Demand (Vahan Proxy), 2. Load Capacity (Grid Headroom), 3. Existing Infra (Repulsion Logic).
+                    Math engine calculates Synergy Scores by balancing: 1. EV Density (Demand), 2. Grid Headroom (Transformer Safety), and 3. Existing Infra (Repulsion logic).
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="why" className="border-b-0">
@@ -342,7 +342,7 @@ export default function InfrastructurePage() {
                     WHY
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pt-1 text-xs text-slate-600 pb-3 leading-relaxed">
-                    BESCOM needs ROI. Finding the "Sweet Spot" between demand, grid safety, and solar potential.
+                    To ensure BESCOM infrastructure spend achieves maximum grid stability and ROI.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

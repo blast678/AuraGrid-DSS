@@ -37,7 +37,7 @@ const ZONE_POLYGONS: Record<string, [number, number][]> = {
 };
 
 function getSynergyColor(score: number) {
-  if (score >= 88) return "#22C55E";
+  if (score >= 88) return "#10B981";
   if (score >= 75) return "#F59E0B";
   return "#EF4444";
 }
@@ -132,8 +132,8 @@ export default function BengaluruMap({
             positions={polygon || []}
             pathOptions={{
               fillColor: color,
-              fillOpacity: isSelected ? 0.55 : 0.32,
-              color: isSelected ? color : color,
+              fillOpacity: 0.7,
+              color: color,
               weight: isSelected ? 3 : 1.5,
               dashArray: isSelected ? undefined : "4 2",
             }}
@@ -186,14 +186,35 @@ export default function BengaluruMap({
             radius={isSelected ? 10 : 6}
             pathOptions={{
               fillColor: color,
-              fillOpacity: 0.9,
-              color: "white",
+              fillOpacity: 0.7,
+              color: color,
               weight: 2,
             }}
             eventHandlers={{ click: () => onZoneSelect?.(rec) }}
           />
         );
       })}
+
+      {/* Floating Legend */}
+      <div 
+        className="absolute bottom-4 right-4 z-[400] bg-white/95 backdrop-blur-sm p-3.5 rounded-xl shadow-lg border border-slate-100"
+      >
+        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2.5">Synergy Level</p>
+        <div className="space-y-2">
+          <div className="flex items-center gap-2.5">
+            <div className="w-3.5 h-3.5 rounded-sm" style={{ backgroundColor: "#10B981" }} />
+            <span className="text-xs font-medium text-slate-700">High Synergy (≥88)</span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <div className="w-3.5 h-3.5 rounded-sm" style={{ backgroundColor: "#F59E0B" }} />
+            <span className="text-xs font-medium text-slate-700">Moderate Potential (75-87)</span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <div className="w-3.5 h-3.5 rounded-sm" style={{ backgroundColor: "#EF4444" }} />
+            <span className="text-xs font-medium text-slate-700">Low ROI / Grid Constrained (&lt;75)</span>
+          </div>
+        </div>
+      </div>
     </MapContainer>
   );
 }

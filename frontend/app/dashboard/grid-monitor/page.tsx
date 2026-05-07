@@ -161,10 +161,10 @@ export default function GridMonitorPage() {
                 <LoadForecastChart data={forecast} zone={activeZone} currentTimeIndex={currentTimeIndex} />
                 <div className="mt-8 px-4">
                   <Slider
-                    value={[currentTimeIndex]}
+                    value={[currentTimeIndex || 0]}
                     max={23}
                     step={1}
-                    onValueChange={(vals) => setCurrentTimeIndex(vals[0])}
+                    onValueChange={(vals) => setCurrentTimeIndex(Array.isArray(vals) ? (vals[0] || 0) : (vals || 0))}
                     className="mb-6 cursor-pointer"
                   />
                   {/* Telemetry Card */}
@@ -179,10 +179,10 @@ export default function GridMonitorPage() {
                     
                     if (currentPoint.is_shifted) {
                       alertType = "amber";
-                      message = `Threshold Exceeded (Limit 60kWh). Water-Filling Active: ${redistributed}kWh redistributed.`;
+                      message = `Peak Shaving Active: Shifting ${redistributed}kWh to 03:00 window to protect Transformer ${activeZone}.`;
                     } else if (hour >= 2 && hour <= 6 && currentPoint.optimized_load > currentPoint.predicted_load) {
                       alertType = "green";
-                      message = "Valley Filling: Grid absorbing shifted load.";
+                      message = "Load Absorbed: Grid headroom utilized safely.";
                     }
 
                     if (!alertType) {

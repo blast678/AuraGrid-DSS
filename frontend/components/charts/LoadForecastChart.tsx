@@ -92,8 +92,9 @@ export default function LoadForecastChart({ data, zone, currentTimeIndex = 0 }: 
   );
 
   return (
-    <div className="w-full h-80">
-      <ResponsiveContainer width="100%" height="100%">
+    <div className="w-full overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-slate-300">
+      <div style={{ width: '1200px', height: '400px' }}>
+        <ResponsiveContainer width="100%" height="100%">
         <ComposedChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="savingsGradient" x1="0" y1="0" x2="0" y2="1">
@@ -194,6 +195,7 @@ export default function LoadForecastChart({ data, zone, currentTimeIndex = 0 }: 
           )}
         </ComposedChart>
       </ResponsiveContainer>
+      </div>
     </div>
   );
 }
