@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Slider } from "@/components/ui/slider";
 import LoadForecastChart from "@/components/charts/LoadForecastChart";
 import DirectivesPanel from "@/components/directives/DirectivesPanel";
 import { useForecast } from "@/hooks/useForecast";
@@ -21,6 +22,7 @@ const SUBSTATIONS = [
 
 export default function GridMonitorPage() {
   const [activeZone, setActiveZone] = useState(SUBSTATIONS[0]);
+  const [currentTimeIndex, setCurrentTimeIndex] = useState(0);
 
   const { data: forecast, isLoading: forecastLoading, refetch: refetchForecast, dataUpdatedAt } =
     useForecast(activeZone);
@@ -155,13 +157,64 @@ export default function GridMonitorPage() {
             {forecastLoading ? (
               <div className="h-80 bg-slate-50 animate-pulse rounded-xl" />
             ) : forecast ? (
-              <LoadForecastChart data={forecast} zone={activeZone} />
+              <>
+                <LoadForecastChart data={forecast} zone={activeZone} currentTimeIndex={currentTimeIndex} />
+                <div className="mt-8 px-4">
+                  <Slider
+                    value={[currentTimeIndex]}
+                    max={23}
+                    step={1}
+                    onValueChange={(vals) => setCurrentTimeIndex(vals[0])}
+                    className="mb-6 cursor-pointer"
+                  />
+                  {/* Telemetry Card */}
+                  {(() => {
+                    const currentPoint = forecast[currentTimeIndex];
+                    if (!currentPoint) return null;
+                    const hour = new Date(currentPoint.timestamp).getHours();
+                    const redistributed = ((currentPoint.predicted_load - currentPoint.optimized_load) * 1000).toFixed(0);
+                    
+                    let alertType = null;
+                    let message = "";
+                    
+                    if (currentPoint.is_shifted) {
+                      alertType = "amber";
+                      message = `Threshold Exceeded (Limit 60kWh). Water-Filling Active: ${redistributed}kWh redistributed.`;
+                    } else if (hour >= 2 && hour <= 6 && currentPoint.optimized_load > currentPoint.predicted_load) {
+                      alertType = "green";
+                      message = "Valley Filling: Grid absorbing shifted load.";
+                    }
+
+                    if (!alertType) {
+                       return (
+                         <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 flex items-center justify-center min-h-[64px] transition-all">
+                           <span className="text-xs text-slate-400 font-medium">Grid Operating Nominally</span>
+                         </div>
+                       );
+                    }
+
+                    return (
+                      <div className={`rounded-xl p-3 border transition-all ${alertType === 'amber' ? 'bg-amber-50 border-amber-200' : 'bg-green-50 border-green-200'} min-h-[64px]`}>
+                         <div className="flex items-center gap-2 mb-1.5">
+                           <div className={`w-2 h-2 rounded-full ${alertType === 'amber' ? 'bg-amber-500 animate-pulse' : 'bg-green-500'}`} />
+                           <span className={`text-[10px] font-bold uppercase tracking-wider ${alertType === 'amber' ? 'text-amber-700' : 'text-green-700'}`}>
+                             {alertType === 'amber' ? 'Load Shift Active' : 'Valley Filling Active'}
+                           </span>
+                         </div>
+                         <p className={`text-xs font-medium ${alertType === 'amber' ? 'text-amber-800' : 'text-green-800'}`}>
+                           {message}
+                         </p>
+                      </div>
+                    );
+                  })()}
+                </div>
+              </>
             ) : (
               <div className="h-80 flex items-center justify-center text-slate-400 text-sm">
                 No forecast data available
               </div>
             )}
-            <p className="text-[10px] text-slate-400 mt-3 px-2">
+            <p className="text-[10px] text-slate-400 mt-5 px-2 text-center">
               ● Green dots indicate water-filling shifted charging windows (17:00–21:00 peak deferral)
             </p>
           </CardContent>

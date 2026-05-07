@@ -22,6 +22,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { useRecommendations } from "@/hooks/useRecommendations";
 import type { Recommendation } from "@/lib/mockData";
 
@@ -204,105 +210,145 @@ export default function InfrastructurePage() {
           </CardContent>
         </Card>
 
-        {/* Zone Detail Panel */}
-        <Card className="card-enterprise">
-          <CardHeader className="pb-3 pt-5 px-6">
-            <CardTitle className="text-sm font-semibold text-slate-700">
-              {selectedRec ? selectedRec.zone_name : "Zone Inspector"}
-            </CardTitle>
-            {!selectedRec && (
-              <p className="text-[10px] text-slate-400 mt-0.5">
-                Click a zone on the map to inspect
-              </p>
-            )}
-          </CardHeader>
-          <CardContent className="px-4 pb-5">
-            {!selectedRec ? (
-              <div className="flex flex-col items-center justify-center py-12 text-slate-300">
-                <Map className="w-10 h-10 mb-3" />
-                <p className="text-sm text-slate-400 text-center">
-                  Select a zone on the map to view detailed metrics
+        {/* Sidebar */}
+        <div className="flex flex-col gap-5">
+          {/* Zone Detail Panel */}
+          <Card className="card-enterprise">
+            <CardHeader className="pb-3 pt-5 px-6">
+              <CardTitle className="text-sm font-semibold text-slate-700">
+                {selectedRec ? selectedRec.zone_name : "Zone Inspector"}
+              </CardTitle>
+              {!selectedRec && (
+                <p className="text-[10px] text-slate-400 mt-0.5">
+                  Click a zone on the map to inspect
                 </p>
-              </div>
-            ) : (
-              <div className="space-y-4 slide-in-up">
-                <div className="flex items-center gap-2">
-                  <Badge
-                    className="text-xs font-bold"
-                    style={{
-                      background:
-                        selectedRec.synergy_score >= 88
-                          ? "#F0FDF4"
-                          : "#FFFBEB",
-                      color:
-                        selectedRec.synergy_score >= 88
-                          ? "#16A34A"
-                          : "#D97706",
-                      border: "none",
-                    }}
-                  >
-                    Score: {selectedRec.synergy_score}/100
-                  </Badge>
-                  {selectedRec.solar_ready ? (
-                    <Badge className="text-xs bg-blue-50 text-blue-700 border-none">
-                      Solar Ready
-                    </Badge>
-                  ) : (
-                    <Badge className="text-xs bg-slate-100 text-slate-500 border-none">
-                      Solar: Needs Review
-                    </Badge>
-                  )}
-                </div>
-
-                <div className="space-y-3">
-                  {[
-                    { label: "EV Density", value: `${Number(selectedRec.ev_density).toFixed(0)} vehicles/km²`, color: "#1A3A6B" },
-                    { label: "Grid Headroom", value: `${Number(selectedRec.grid_headroom).toFixed(1)} MW`, color: "#22C55E" },
-                    { label: "Solar Hosting", value: `${Number(selectedRec.solar_hosting).toFixed(1)} MW`, color: "#F59E0B" },
-                    { label: "Land Type", value: selectedRec.land_type, color: "#64748B" },
-                  ].map((m) => (
-                    <div key={m.label} className="flex justify-between items-center">
-                      <span className="text-xs text-slate-500">{m.label}</span>
-                      <span className="text-xs font-bold" style={{ color: m.color }}>
-                        {m.value}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="bg-slate-50 rounded-xl p-3">
-                  <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
-                    AI Reasoning
-                  </p>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {selectedRec.reasoning}
+              )}
+            </CardHeader>
+            <CardContent className="px-4 pb-5">
+              {!selectedRec ? (
+                <div className="flex flex-col items-center justify-center py-12 text-slate-300">
+                  <Map className="w-10 h-10 mb-3" />
+                  <p className="text-sm text-slate-400 text-center">
+                    Select a zone on the map to view detailed metrics
                   </p>
                 </div>
+              ) : (
+                <div className="space-y-4 slide-in-up">
+                  <div className="flex items-center gap-2">
+                    <Badge
+                      className="text-xs font-bold"
+                      style={{
+                        background:
+                          selectedRec.synergy_score >= 88
+                            ? "#F0FDF4"
+                            : "#FFFBEB",
+                        color:
+                          selectedRec.synergy_score >= 88
+                            ? "#16A34A"
+                            : "#D97706",
+                        border: "none",
+                      }}
+                    >
+                      Score: {selectedRec.synergy_score}/100
+                    </Badge>
+                    {selectedRec.solar_ready ? (
+                      <Badge className="text-xs bg-blue-50 text-blue-700 border-none">
+                        Solar Ready
+                      </Badge>
+                    ) : (
+                      <Badge className="text-xs bg-slate-100 text-slate-500 border-none">
+                        Solar: Needs Review
+                      </Badge>
+                    )}
+                  </div>
 
-                <div className="flex gap-2 pt-1">
-                  <Button
-                    size="sm"
-                    className="flex-1 text-xs"
-                    variant="outline"
-                    onClick={() => recommendations && generateROI(recommendations)}
-                  >
-                    <FileText className="w-3 h-3 mr-1" />
-                    ROI Report
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="flex-1 text-xs text-white"
-                    style={{ background: "#1A3A6B" }}
-                    onClick={() => recommendations && exportBBMP(recommendations)}
-                  >
-                    <Download className="w-3 h-3 mr-1" />
-                    BBMP Export
-                  </Button>
+                  <div className="space-y-3">
+                    {[
+                      { label: "EV Density", value: `${Number(selectedRec.ev_density).toFixed(0)} vehicles/km²`, color: "#1A3A6B" },
+                      { label: "Grid Headroom", value: `${Number(selectedRec.grid_headroom).toFixed(1)} MW`, color: "#22C55E" },
+                      { label: "Solar Hosting", value: `${Number(selectedRec.solar_hosting).toFixed(1)} MW`, color: "#F59E0B" },
+                      { label: "Land Type", value: selectedRec.land_type, color: "#64748B" },
+                    ].map((m) => (
+                      <div key={m.label} className="flex justify-between items-center">
+                        <span className="text-xs text-slate-500">{m.label}</span>
+                        <span className="text-xs font-bold" style={{ color: m.color }}>
+                          {m.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="bg-slate-50 rounded-xl p-3">
+                    <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
+                      AI Reasoning
+                    </p>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {selectedRec.reasoning}
+                    </p>
+                  </div>
+
+                  <div className="flex gap-2 pt-1">
+                    <Button
+                      size="sm"
+                      className="flex-1 text-xs"
+                      variant="outline"
+                      onClick={() => recommendations && generateROI(recommendations)}
+                    >
+                      <FileText className="w-3 h-3 mr-1" />
+                      ROI Report
+                    </Button>
+                    <Button
+                      size="sm"
+                      className="flex-1 text-xs text-white"
+                      style={{ background: "#1A3A6B" }}
+                      onClick={() => recommendations && exportBBMP(recommendations)}
+                    >
+                      <Download className="w-3 h-3 mr-1" />
+                      BBMP Export
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            )}
-          </CardContent>
-        </Card>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Synergy Methodology */}
+          <Card className="card-enterprise">
+            <CardHeader className="pb-2 pt-4 px-6">
+              <CardTitle className="text-sm font-semibold text-slate-700">
+                Synergy Methodology
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="px-4 pb-4">
+              <Accordion className="w-full">
+                <AccordionItem value="what" className="border-b-0">
+                  <AccordionTrigger className="px-3 py-2 text-xs font-semibold hover:bg-slate-50 rounded-lg hover:no-underline data-[state=open]:text-[#1A3A6B]">
+                    WHAT
+                  </AccordionTrigger>
+                  <AccordionContent className="px-3 pt-1 text-xs text-slate-600 pb-3">
+                    Built the "Spatial Optimizer," an interactive Bengaluru heatmap.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="how" className="border-b-0">
+                  <AccordionTrigger className="px-3 py-2 text-xs font-semibold hover:bg-slate-50 rounded-lg hover:no-underline data-[state=open]:text-[#1A3A6B]">
+                    HOW
+                  </AccordionTrigger>
+                  <AccordionContent className="px-3 pt-1 text-xs text-slate-600 pb-3 leading-relaxed">
+                    Engineered a Synergy Score using 3 constraints: 1. Demand (Vahan Proxy), 2. Load Capacity (Grid Headroom), 3. Existing Infra (Repulsion Logic).
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="why" className="border-b-0">
+                  <AccordionTrigger className="px-3 py-2 text-xs font-semibold hover:bg-slate-50 rounded-lg hover:no-underline data-[state=open]:text-[#1A3A6B]">
+                    WHY
+                  </AccordionTrigger>
+                  <AccordionContent className="px-3 pt-1 text-xs text-slate-600 pb-3 leading-relaxed">
+                    BESCOM needs ROI. Finding the "Sweet Spot" between demand, grid safety, and solar potential.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </div>
       </div>
 
       {/* ── Top 5 Table ─────────────────────────────────────────── */}
@@ -430,14 +476,38 @@ export default function InfrastructurePage() {
                       </TableRow>
                       {expandedRow === rec.zone_id && (
                         <TableRow className="bg-slate-50">
-                          <TableCell colSpan={9} className="px-6 py-3">
-                            <div className="flex items-start gap-2">
-                              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider flex-shrink-0 mt-0.5">
-                                AI Reasoning:
-                              </span>
-                              <p className="text-xs text-slate-600 leading-relaxed">
-                                {rec.reasoning}
-                              </p>
+                          <TableCell colSpan={9} className="px-6 py-4">
+                            <div className="flex flex-col gap-4">
+                              <div className="flex items-start gap-2">
+                                <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider flex-shrink-0 mt-0.5">
+                                  AI Reasoning:
+                                </span>
+                                <p className="text-xs text-slate-600 leading-relaxed">
+                                  {rec.reasoning}
+                                </p>
+                              </div>
+                              
+                              <div className="border-t border-slate-200 pt-3 max-w-lg">
+                                <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2 block">
+                                  Synergy Score Breakdown
+                                </span>
+                                <div className="flex gap-2 items-center w-full">
+                                  <div className="flex-1">
+                                    <div className="flex h-2.5 rounded-full overflow-hidden w-full bg-slate-100 mb-1.5 shadow-inner">
+                                      <div className="bg-[#1A3A6B] h-full transition-all duration-1000" style={{ width: '30%' }}></div>
+                                      <div className="bg-[#22C55E] h-full transition-all duration-1000" style={{ width: '50%' }}></div>
+                                      <div className="bg-red-500 h-full transition-all duration-1000 relative" style={{ width: '20%' }}>
+                                        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(0,0,0,0.5) 4px, rgba(0,0,0,0.5) 8px)' }}></div>
+                                      </div>
+                                    </div>
+                                    <div className="flex text-[9px] font-bold tracking-tight">
+                                      <div style={{ width: '30%' }} className="text-[#1A3A6B]">Demand (30%)</div>
+                                      <div style={{ width: '50%' }} className="text-[#22C55E]">Grid Safety (50%)</div>
+                                      <div style={{ width: '20%' }} className="text-red-500 text-right">Penalty (-20%)</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </TableCell>
                         </TableRow>

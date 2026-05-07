@@ -10,6 +10,7 @@ import {
   Legend,
   ResponsiveContainer,
   ReferenceDot,
+  ReferenceLine,
 } from "recharts";
 import { format } from "date-fns";
 import type { ForecastPoint } from "@/lib/mockData";
@@ -17,6 +18,7 @@ import type { ForecastPoint } from "@/lib/mockData";
 interface LoadForecastChartProps {
   data: ForecastPoint[];
   zone: string;
+  currentTimeIndex?: number;
 }
 
 interface CustomTooltipEntry {
@@ -82,7 +84,7 @@ function CustomTooltip({ active, payload, label }: CustomTooltipProps) {
   );
 }
 
-export default function LoadForecastChart({ data, zone }: LoadForecastChartProps) {
+export default function LoadForecastChart({ data, zone, currentTimeIndex = 0 }: LoadForecastChartProps) {
   // Annotate shift points for reference dots
   const shiftedPoints = data.filter((d) => d.is_shifted);
   const peakShifted = shiftedPoints.filter(
@@ -180,6 +182,16 @@ export default function LoadForecastChart({ data, zone }: LoadForecastChartProps
               strokeWidth={1.5}
             />
           ))}
+
+          {/* Current Time Reference Line */}
+          {data[currentTimeIndex] && (
+            <ReferenceLine
+              x={data[currentTimeIndex].timestamp}
+              stroke="#F59E0B"
+              strokeDasharray="4 4"
+              strokeWidth={2}
+            />
+          )}
         </ComposedChart>
       </ResponsiveContainer>
     </div>
