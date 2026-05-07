@@ -6,15 +6,17 @@ from contextlib import asynccontextmanager
 import pandas as pd
 from fastapi import FastAPI
 import prophet
+import os
+import psycopg2
 
 # 1. SILENCE THE PLOTLY DRAMA
 # This stops the "Interactive plots will not work" warning from cluttering your logs
 logging.getLogger('prophet').setLevel(logging.ERROR)
 
+# pyrefly: ignore [missing-import]
 from prophet.serialize import model_from_json
-
 m = None
-
+DATABASE_URL = os.getenv("DATABASE_URL")
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global m
@@ -44,7 +46,13 @@ app = FastAPI(title="AuraGrid AI-Engine", lifespan=lifespan)
 
 @app.get("/health")
 def health_check():
-    return {"status": "online" if m else "offline"}
+    try:
+        # Test the connection to Aiven
+        conn = psycopg2.connect(DATABASE_URL)
+        conn.close()
+        return {"status": "AI Engine Live", "database": "Connected"}
+    except Exception as e:
+        return {"status": "Database Error", "details": str(e)}
 
 @app.post("/predict")
 def predict_demand(horizon_hours: int = 168):

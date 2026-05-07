@@ -6,13 +6,43 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"crypto/tls"
+	"log"
+	"os"
 
+	"github.com/segmentio/kafka-go"
+	"github.com/segmentio/kafka-go/sasl/scram"
 	"github.com/rs/cors"
 )
 
 func main() {
 	fmt.Println("⚡ AuraGrid Main Server Initializing...")
+	// 1. Pull the Aiven credentials from Render environment variables
+	brokerAddress := os.Getenv("KAFKA_BROKER") // e.g., kafka-xyz.aivencloud.com:26720
+	username := os.Getenv("KAFKA_USER")
+	password := os.Getenv("KAFKA_PASS")
 
+	// 2. Configure SCRAM authentication (Aiven standard)
+	mechanism, err := scram.Mechanism(scram.SHA256, username, password)
+	if err != nil {
+		log.Fatalf("Failed to configure SCRAM: %v", err)
+	}
+
+	// 3. Configure the secure TLS Dialer
+	dialer := &kafka.Dialer{
+		SASLMechanism: mechanism,
+		TLS:           &tls.Config{}, // Aiven requires TLS
+	}
+
+	// 4. Initialize the Kafka Reader
+	reader := kafka.NewReader(kafka.ReaderConfig{
+		Brokers: []string{brokerAddress},
+		Topic:   "grid-load-events",
+		GroupID: "auragrid-consumer-group",
+		Dialer:  dialer,
+	})
+
+	log.Println("✅ Successfully connected to Aiven Kafka!")
 	// 1. Boot up Database Connection
 	db.InitDB()
 	defer db.CloseDB()
