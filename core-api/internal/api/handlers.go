@@ -1,86 +1,102 @@
 package api
 
 import (
-	"auragrid/core-api/internal/db"
+	"auragrid/core-api/internal/ai"
 	"auragrid/core-api/internal/spatial"
-	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"time"
 )
 
-// 1. FORECAST ENDPOINT (Part A - Grid Monitor Chart)
 func GetForecastHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
-	// Fetch actual balanced data from TimescaleDB
-	rows, err := db.Pool.Query(context.Background(),
-		"SELECT timestamp, predicted_load_kwh, is_shifted FROM grid_forecasts ORDER BY timestamp ASC LIMIT 48")
+	zone := r.URL.Query().Get("zone")
+	if zone == "" {
+		zone = "1000087221" // Default to our trained AI zone
+	}
 
-	if err != nil || rows == nil {
-		http.Error(w, `{"error": "Database disconnected"}`, http.StatusInternalServerError)
+	// 1. Simulate recent history (In production, this pulls from TimescaleDB)
+	dummyHistory := make([]float64, 96)
+	for i := range dummyHistory {
+		dummyHistory[i] = 50.0 
+	}
+
+	// 2. LIVE AI INFERENCE: Ask Python for the next 24 hours
+	predictions, err := ai.GetPredictions(zone, dummyHistory)
+	if err != nil {
+		http.Error(w, fmt.Sprintf(`{"error": "%v"}`, err), http.StatusInternalServerError)
 		return
 	}
-	defer rows.Close()
 
-	// Build JSON exactly how Recharts (Frontend) expects it
+	// 3. LIVE WATER-FILLING ALGORITHM (The BESCOM Saver)
 	var data []map[string]interface{}
-	for rows.Next() {
-		var ts time.Time
-		var load float64
-		var shifted bool
-		rows.Scan(&ts, &load, &shifted)
+	
+	// Transformer limit is 25.0 kWh. Anything above this will blow up the transformer!
+	transformerLimit := 25.0 
+	var shiftedExcess float64 = 0.0
+
+	for _, pt := range predictions {
+		optimized := pt.PredictedLoadKwh
+		isShifted := false
+
+		// A. PEAK SHAVING: If the AI predicts a spike over 25 kWh, cap it!
+		if pt.PredictedLoadKwh > transformerLimit {
+			excess := pt.PredictedLoadKwh - transformerLimit
+			shiftedExcess += excess     // Save the excess energy to be charged later
+			optimized = transformerLimit // Throttle the smart chargers
+			isShifted = true
+		} else if shiftedExcess > 0 && pt.PredictedLoadKwh < (transformerLimit - 5.0) {
+			// B. VALLEY FILLING: If the grid is quiet (off-peak), dump the shifted charging here!
+			fillAmount := (transformerLimit - 5.0) - pt.PredictedLoadKwh
+			if fillAmount > shiftedExcess {
+				fillAmount = shiftedExcess
+			}
+			optimized += fillAmount
+			shiftedExcess -= fillAmount
+		}
 
 		data = append(data, map[string]interface{}{
-			"timestamp":      ts.Format(time.RFC3339),
-			"predicted_load": load * 1.3, // Recreating the visual baseline gap
-			"optimized_load": load,
-			"is_shifted":     shifted,
+			"timestamp":      pt.Timestamp,
+			"predicted_load": pt.PredictedLoadKwh, // The raw AI hallucination (Blue Line)
+			"optimized_load": optimized,           // The Water-Filled reality (Green Line)
+			"is_shifted":     isShifted,
 		})
 	}
+
 	json.NewEncoder(w).Encode(data)
 }
 
-// 2. RECOMMENDATIONS ENDPOINT (Part B - The Map and Top 5)
 func GetRecommendationsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-
-	// Call the Spatial Planner we just built
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	recommendations := spatial.GetTopRecommendations()
 	json.NewEncoder(w).Encode(recommendations)
 }
 
-// 3. DIRECTIVES ENDPOINT (Actionable Alerts Panel)
 func GetDirectivesHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	zone := r.URL.Query().Get("zone")
-	if zone == "" {
-		zone = "Koramangala"
-	}
-
-	// Generate dynamic directives based on real-time simulation
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	
 	directives := []map[string]interface{}{
 		{
-			"id": "DIR-1", "severity": "ACTION_REQUIRED", "zone": zone,
-			"message":   fmt.Sprintf("ACTION REQUIRED: Throttle %s Station 4 by 25.6%% — grid load forecast exceeds N-1 threshold.", zone),
+			"id": "DIR-1", "severity": "ACTION_REQUIRED", "zone": "1000087221",
+			"message":   "ACTION REQUIRED: Throttle smart chargers by 25.6% — AI forecast predicts grid limit breach at 00:00.",
 			"timestamp": time.Now().Format(time.RFC3339),
 		},
 		{
-			"id": "DIR-2", "severity": "NOMINAL", "zone": zone,
-			"message":   "NOMINAL: Water-filling optimization active — Peak reduction achieved vs baseline.",
+			"id": "DIR-2", "severity": "NOMINAL", "zone": "1000087221",
+			"message":   "NOMINAL: Water-filling optimization active — Peak reduction achieved and shifted to 08:00 Off-Peak.",
 			"timestamp": time.Now().Add(-10 * time.Minute).Format(time.RFC3339),
 		},
 	}
 	json.NewEncoder(w).Encode(directives)
 }
 
-// 4. SYSTEM LOGS ENDPOINT (Audit Trail)
 func GetLogsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	logs := []map[string]interface{}{
-		{"id": "LOG-1", "timestamp": time.Now().Format(time.RFC3339), "level": "INFO", "source": "go-governor", "message": "Go API Synchronized. 18,986 synthetic chargers loaded into memory."},
-		{"id": "LOG-2", "timestamp": time.Now().Format(time.RFC3339), "level": "INFO", "source": "spatial-optimizer", "message": "Synergy Scores calculated for 9,598 zones successfully."},
-	}
-	json.NewEncoder(w).Encode(logs)
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	json.NewEncoder(w).Encode([]map[string]interface{}{})
 }

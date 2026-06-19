@@ -1,11 +1,11 @@
 module auragrid/core-api
 
-go 1.25.5
+go 1.21.0  // Change from 1.25.5 to a stable 1.21 or 1.22 base
 
 require (
-	github.com/jackc/pgx/v5 v5.5.0
-	github.com/lib/pq v1.12.3
-	github.com/segmentio/kafka-go v0.4.47
+    github.com/jackc/pgx/v5 v5.5.0
+    github.com/lib/pq v1.12.3
+    github.com/segmentio/kafka-go v0.4.47
 )
 
 require (

@@ -10,9 +10,8 @@ import (
 
 var Pool *pgxpool.Pool
 
-func InitDB() {
-	dbURL := "postgres://bescom_user:bescom_password@localhost:5433/bescom_grid"
-
+// Accept dbURL dynamically instead of hardcoding
+func InitDB(dbURL string) {
 	config, err := pgxpool.ParseConfig(dbURL)
 	if err != nil {
 		log.Fatalf("❌ Unable to parse database URL: %v", err)
@@ -28,7 +27,7 @@ func InitDB() {
 		log.Fatalf("❌ Database ping failed: %v", err)
 	}
 
-	fmt.Println("✅ Successfully connected to TimescaleDB (PostgreSQL) pool!")
+	fmt.Println("✅ Successfully connected to PostgreSQL pool!")
 }
 
 func CloseDB() {
