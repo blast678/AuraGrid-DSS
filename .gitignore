@@ -53,3 +53,19 @@ docker/volumes/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Environments
+venv/
+node_modules/
+__pycache__/
+.next/
+
+# Massive Data Files (DO NOT UPLOAD THESE)
+data/
+ai-engine/data/
+*.csv
+*.json
+*.pkl
+
+# Secrets
+.env

@@ -1,78 +1,101 @@
 import os
-import psycopg2
 import pandas as pd
-from fastapi import FastAPI, BackgroundTasks
+import lightgbm as lgb
+from datetime import datetime, timedelta
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from typing import List
 
-# Initialize App
-app = FastAPI(title="AuraGrid AI Engine")
+app = FastAPI(title="AuraGrid AI - Enterprise LightGBM Inference")
 
-# Allow Next.js frontend to call this API directly if needed
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Allow Next.js frontend and Go backend to talk to this API
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-# Aiven Postgres Database URL
-DATABASE_URL = os.getenv("DATABASE_URL")
+# ---------------------------------------------------------
+# STEP 1: Load the Brain into RAM at Startup
+# ---------------------------------------------------------
+MODEL_PATH = "models/global_lgbm_model.txt"
+model = None
 
-# Global state for the Frontend MLOps Dashboard
-TRAINING_STATUS = {"is_training": False, "last_trained": "Awaiting initial sync"}
+@app.on_event("startup")
+def load_model():
+    global model
+    if os.path.exists(MODEL_PATH):
+        # We load the file ONCE when the server boots. Instant inference.
+        model = lgb.Booster(model_file=MODEL_PATH)
+        print("🧠 ✅ AI Brain loaded into memory successfully!")
+    else:
+        print("⚠️ WARNING: Brain not found! Run train_phase2.py first.")
 
+# ---------------------------------------------------------
+# STEP 2: Define the Go Backend Request Contract
+# ---------------------------------------------------------
 class PredictRequest(BaseModel):
     zone_id: str
-    historical_load: list = []
+    # The Go API MUST send us the last 24 hours of grid load (96 blocks)
+    # so we can calculate the lag features!
+    recent_history_kwh: List[float] 
+    horizon_blocks: int = 96 # We predict 24 hours into the future
 
-@app.get("/health")
-def health_check():
-    db_status = "Disconnected"
-    if DATABASE_URL:
-        try:
-            conn = psycopg2.connect(DATABASE_URL)
-            conn.close()
-            db_status = "Connected to Aiven PostgreSQL"
-        except Exception as e:
-            db_status = f"Error: {e}"
-    return {"status": "AI Engine Live", "database": db_status}
-
+# ---------------------------------------------------------
+# STEP 3: The Hot Path (Real-Time Inference Endpoint)
+# ---------------------------------------------------------
 @app.post("/predict")
 def get_prediction(req: PredictRequest):
-    # This is where your serialized Prophet model loads.
-    # Returning a mock array here guarantees your hackathon demo won't crash 
-    # even if Prophet fails to load the JSON file in the cloud.
-    print(f"⚡ INFERENCE REQUEST: Predicting load for {req.zone_id}")
-    return [
-        {"ds": "2026-05-08T18:00:00", "yhat": 82.4}, # Over 60kWh! Triggers Water-Filling
-        {"ds": "2026-05-08T19:00:00", "yhat": 85.1},
-        {"ds": "2026-05-08T20:00:00", "yhat": 79.5},
-        {"ds": "2026-05-08T21:00:00", "yhat": 60.2}
-    ]
+    global model
+    if model is None:
+        raise HTTPException(status_code=503, detail="AI Model not loaded.")
+        
+    if len(req.recent_history_kwh) < 96:
+        raise HTTPException(status_code=400, detail="Need exactly 96 historical blocks (24 hrs) for lag features.")
 
-# --- MLOPS COLD PATH LOGIC ---
-def execute_retraining(zone_id: str):
-    global TRAINING_STATUS
-    TRAINING_STATUS["is_training"] = True
-    try:
-        # In production, this pulls from Aiven and runs Prophet.fit()
-        import time
-        time.sleep(5) # Simulating training time for the frontend demo
-        TRAINING_STATUS["last_trained"] = pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
-        print(f"✅ Model successfully retrained for {zone_id} using Aiven Data Lake!")
-    except Exception as e:
-        print(f"❌ Retraining failed: {e}")
-    finally:
-        TRAINING_STATUS["is_training"] = False
+    # We copy the history because we are going to modify it
+    history = req.recent_history_kwh.copy()
+    
+    # Snap the current time to the nearest 15-minute block
+    current_time = datetime.now().replace(second=0, microsecond=0)
+    current_time -= timedelta(minutes=current_time.minute % 15)
 
-@app.post("/admin/force-retrain/{zone_id}")
-async def force_retrain(zone_id: str, background_tasks: BackgroundTasks):
-    if TRAINING_STATUS["is_training"]:
-        return {"status": "Model is already training..."}
-    background_tasks.add_task(execute_retraining, zone_id)
-    return {"status": "Retraining triggered via Cold Path", "zone": zone_id}
+    predictions = []
 
-@app.get("/admin/status")
-async def get_status():
-    return TRAINING_STATUS
+    # 🔄 THE AUTOREGRESSIVE LOOP
+    for i in range(req.horizon_blocks):
+        future_time = current_time + timedelta(minutes=15 * (i + 1))
+        
+        # Dynamically calculate features from the end of the history array
+        lag_15m = history[-1]
+        lag_1h = history[-4]
+        lag_24h = history[-96]
+        rolling_mean_2h = sum(history[-8:]) / 8.0
+
+        # Build the exact Feature Matrix we used during Training (Phase 1)
+        df_features = pd.DataFrame([{
+            'zone_id': req.zone_id,
+            'hour': future_time.hour,
+            'minute': future_time.minute,
+            'day_of_week': future_time.weekday(),
+            'is_weekend': 1 if future_time.weekday() >= 5 else 0,
+            'lag_15m': lag_15m,
+            'lag_1h': lag_1h,
+            'lag_24h': lag_24h,
+            'rolling_mean_2h': rolling_mean_2h
+        }])
+
+        # Tell LightGBM that zone_id is a label, not a math number
+        df_features['zone_id'] = df_features['zone_id'].astype('category')
+
+        # Predict the next 15-min block!
+        pred_kwh = float(model.predict(df_features)[0])
+        
+        # ⚠️ CRITICAL STEP: Append the prediction to the history array!
+        history.append(pred_kwh)
+        
+        # Save for the Go API response
+        predictions.append({
+            "timestamp": future_time.strftime('%Y-%m-%dT%H:%M:%S'),
+            "predicted_load_kwh": round(pred_kwh, 2)
+        })
+
+    print(f"⚡ PREDICTION: Successfully forecasted 24 hrs for {req.zone_id}")
+    return predictions
