@@ -15,8 +15,9 @@ import { format } from "date-fns";
 import type { ForecastPoint } from "@/lib/mockData";
 
 interface LoadForecastChartProps {
-  data: ForecastPoint[];
+  data: any[]; // (Leave whatever is currently here)
   zone: string;
+  currentTimeIndex?: number; // 👈 ADD THIS EXACT LINE
 }
 
 interface CustomTooltipEntry {

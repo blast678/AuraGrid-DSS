@@ -1,0 +1,8 @@
+node_modules
+.next
+.git
+*.log
+data/*.csv
+data/*.geojson
+dist
+tmp

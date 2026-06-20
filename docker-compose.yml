@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # Persistence Layer: TimescaleDB for time-series grid data 
   timescaledb:
     image: timescale/timescaledb:2.14.2-pg15
     container_name: auragrid-db
@@ -19,7 +18,6 @@ services:
     container_name: auragrid-zookeeper
     environment:
       - ZOOKEEPER_CLIENT_PORT=2181
-      - ZOOKEEPER_TICK_TIME=2000
 
   kafka:
     image: confluentinc/cp-kafka:7.5.0
@@ -27,18 +25,16 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - "9092:9092"   # Internal broker port
-      - "9094:9094"   # External port for your Go code running on localhost
+      - "9092:9092"
+      - "9094:9094"
     environment:
       - KAFKA_BROKER_ID=1
       - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
-      # Setup Listeners: 9092 for inter-container communication, 9094 for your local Go code
       - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
       - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
       - KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT
       - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
 
-  # Brain Layer: Python FastAPI serving Prophet ML forecasts [cite: 106, 129, 130]
   ai-engine:
     build: ./ai-engine
     container_name: auragrid-ai-engine
@@ -46,11 +42,13 @@ services:
       - "8000:8000"
     environment:
       - DATABASE_URL=postgresql://bescom_admin:grid_secure_pass@auragrid-db:5432/auragrid
-      - PYTHONUNBUFFERED=1    # BRUTAL FIX: Prevents Docker from swallowing Python logs
+    volumes:
+      # SPEED HACK: Sync your local 'ai-engine' and 'data' folder
+      - ./ai-engine:/app
+      - ./data:/app/data
     depends_on:
       - timescaledb
 
-  # Core Layer: GoLang API for Water-Filling & Synergy math [cite: 103, 104, 124]
   core-api:
     build: ./core-api
     container_name: auragrid-core
@@ -59,17 +57,23 @@ services:
     environment:
       - KAFKA_BROKERS=kafka:9092
       - DB_URL=postgres://bescom_admin:grid_secure_pass@timescaledb:5432/auragrid
-      - AI_ENGINE_URL=http://host.docker.internal:8000
+      - AI_ENGINE_URL=http://ai-engine:8000
+    volumes:
+      # SPEED HACK: Sync local Go code for hot-reloading
+      - ./core-api:/app
     depends_on:
       - kafka
       - timescaledb
 
-  # Client Layer: Next.js Frontend [cite: 93, 101, 116]
   frontend:
     build: ./frontend
     container_name: auragrid-ui
     ports:
       - "3000:3000"
+    volumes:
+      # SPEED HACK: Sync local React code
+      - ./frontend:/app
+      - /app/node_modules
     environment:
       - NEXT_PUBLIC_API_URL=http://localhost:8080
     depends_on:

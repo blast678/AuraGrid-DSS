@@ -9,8 +9,10 @@ export function useRecommendations() {
     queryFn: async () => {
       try {
         const res = await api.getRecommendations();
-        return res.data;
-      } catch {
+        // Backend now returns the EXACT data format we need, so we just pass it straight through!
+        return res.data as Recommendation[];
+      } catch (error) {
+        console.warn("⚠️ Backend unreachable, falling back to Mock Data");
         return MOCK_RECOMMENDATIONS;
       }
     },

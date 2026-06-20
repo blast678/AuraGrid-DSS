@@ -13,7 +13,7 @@ var Writer *kafka.Writer
 func InitProducer() {
 	// Initialize the Pure Go Kafka Writer
 	Writer = &kafka.Writer{
-		Addr:         kafka.TCP("localhost:9092"),
+		Addr:         kafka.TCP("kafka:9092"),
 		Balancer:     &kafka.LeastBytes{},
 		RequiredAcks: kafka.RequireAll, // Same as "acks": "all" (Zero Data Loss)
 	}
